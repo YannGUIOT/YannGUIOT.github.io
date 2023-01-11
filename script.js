@@ -78,7 +78,8 @@ const sets = {
   "mode2PlayersButton"   : [texts.buttonComputer, colors.buttonParty, colors.buttonModeOff, texts.isOn + texts.button2Players, colors.buttonSelect, colors.buttonModeOn],
   "looseOrDraw"          : [colors.bckGrdLoose, colors.looseText, shadows.endText, colors.looseText, shadows.endText, colors.buttonSelect, colors.buttonSelect, colors.buttonSelect, colors.scoreTextLoose],
   "party"                : [colors.bckGrdParty, "", shadows.partyText, "", "", colors.buttonParty,colors.buttonParty, colors.buttonParty,colors.scoreTextParty],
-  "win"                  : [colors.bckGrdWin, colors.winText, shadows.endText, colors.winText, shadows.endText, colors.buttonSelect, colors.buttonSelect, colors.buttonSelect, colors.scoreTextParty]
+  "win"                  : [colors.bckGrdWin, colors.winText, shadows.endText, colors.winText, shadows.endText, colors.buttonSelect, colors.buttonSelect, colors.buttonSelect, colors.scoreTextParty],
+  "line"                 : [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]]
 };
 
 /********************************************************************************************************/
@@ -167,8 +168,8 @@ class View
   {
     for (let i = 0 ; i < 3 ; i++) 
     { 
-      dom.case[(line[lineWinner][i])-1].style.color = colors.caseWin; 
-      dom.case[(line[lineWinner][i])-1].style.textShadow = shadows.caseWin;
+      dom.case[(sets.line[lineWinner][i])-1].style.color = colors.caseWin; 
+      dom.case[(sets.line[lineWinner][i])-1].style.textShadow = shadows.caseWin;
     }
   }
 
@@ -369,11 +370,11 @@ class Controller
 
   static SearchBestCaseToPlay(val)
   {
-    for (let l in line) 
+    for (let l in sets.line) 
     { 
-      if (gridCase[line[l][1]].value == val && gridCase[line[l][2]].value == val && gridCase[line[l][0]].isPlayed == false) { return line[l][0]; }
-      if (gridCase[line[l][0]].value == val && gridCase[line[l][2]].value == val && gridCase[line[l][1]].isPlayed == false) { return line[l][1]; }
-      if (gridCase[line[l][0]].value == val && gridCase[line[l][1]].value == val && gridCase[line[l][2]].isPlayed == false) { return line[l][2]; }
+      if (gridCase[sets.line[l][1]].value == val && gridCase[sets.line[l][2]].value == val && gridCase[sets.line[l][0]].isPlayed == false) { return sets.line[l][0]; }
+      if (gridCase[sets.line[l][0]].value == val && gridCase[sets.line[l][2]].value == val && gridCase[sets.line[l][1]].isPlayed == false) { return sets.line[l][1]; }
+      if (gridCase[sets.line[l][0]].value == val && gridCase[sets.line[l][1]].value == val && gridCase[sets.line[l][2]].isPlayed == false) { return sets.line[l][2]; }
     }
   }
 
@@ -388,7 +389,7 @@ class Controller
 
   static SearchIfWin(val)
   {
-    for (let l in line )
+    for (let l in sets.line )
     {
       if (Controller.TestLine(l, val))
       {
@@ -402,9 +403,9 @@ class Controller
 
   static TestLine(l, val)
   {
-    if ( (gridCase[line[l][0]].value == gridCase[line[l][1]].value
-      && gridCase[line[l][0]].value == gridCase[line[l][2]].value
-      && gridCase[line[l][0]].value == val) ) { return true; }
+    if ( (gridCase[sets.line[l][0]].value == gridCase[sets.line[l][1]].value
+      && gridCase[sets.line[l][0]].value == gridCase[sets.line[l][2]].value
+      && gridCase[sets.line[l][0]].value == val) ) { return true; }
   }
 
   static SearchEmptyCase()
@@ -470,5 +471,4 @@ let gameIsNotFinish = true;
 let gameIsNotStart = true;
 let lineWinner = null;
 let gridCase = [null]; // to start at gridCase[1]
-let line = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
 View.Init();
