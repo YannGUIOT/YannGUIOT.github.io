@@ -77,8 +77,8 @@ const sets = {
   "playAgainButton"      : [texts.buttonNewGame3, colors.buttonSuggest],
   "modeVsComputerButton" : [texts.isOn + texts.buttonComputer, colors.buttonSelect, colors.buttonModeOn, texts.button2Players, colors.buttonParty, colors.buttonModeOff],
   "mode2PlayersButton"   : [texts.buttonComputer, colors.buttonParty, colors.buttonModeOff, texts.isOn + texts.button2Players, colors.buttonSelect, colors.buttonModeOn],
-  "looseOrDraw"          : [colors.bckGrdLoose, colors.looseText, shadows.endText, colors.looseText, shadows.endText, colors.buttonSelect, colors.buttonSelect, colors.buttonSelect, colors.scoreTextLoose],
   "party"                : [colors.bckGrdParty, "", shadows.partyText, "", "", colors.buttonParty,colors.buttonParty, colors.buttonParty,colors.scoreTextParty],
+  "looseOrDraw"          : [colors.bckGrdLoose, colors.looseText, shadows.endText, colors.looseText, shadows.endText, colors.buttonSelect, colors.buttonSelect, colors.buttonSelect, colors.scoreTextLoose],
   "win"                  : [colors.bckGrdWin, colors.winText, shadows.endText, colors.winText, shadows.endText, colors.buttonSelect, colors.buttonSelect, colors.buttonSelect, colors.scoreTextParty]
 };
 
