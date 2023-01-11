@@ -1,8 +1,8 @@
 //***********************************************  ROUTER  *********************************************//
 
+const rootMode = (x) => {Controller.ChangeMode(x);}
 const rootCase = (x) => {Controller.PlayCase(x);}
-const rootPlay = () => {Controller.NewGame();} 
-const rootMode = (x) => {Controller.ChangeMode(x);} 
+const rootPlay = ( ) => {Controller.NewGame();}
 
 //*********************************************  CONFIG DOM  *******************************************//
 
