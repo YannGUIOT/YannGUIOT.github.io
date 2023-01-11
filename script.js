@@ -1,22 +1,90 @@
+/********************************************************************************************************/
+//**********************************************  DATABASE  ********************************************//
+/********************************************************************************************************/
+
+const dom = {
+  "case"         : document.getElementsByClassName("case"),
+  "score"        : document.getElementsByClassName("Scores"),
+  "top"          : document.getElementById("topText"),
+  "bottom"       : document.getElementById("bottomText"),
+  "newGame"      : document.getElementById("newGame"),
+  "computerMode" : document.getElementById("computerMode"),
+  "playersMode"  : document.getElementById("playersMode"),
+  "scoreP1"      : document.getElementById("Player1Score"),
+  "scoreP2"      : document.getElementById("Player2Score")
+};
+
+const musics = {
+  "clickSong" : "click",
+  "looseSong" : "loose",
+  "drawSong"  : "draw",
+  "winSong"   : "win"
+};
+
+const texts = {
+  "isOn"           : "➜ ",
+  "arrow"          : " → ",
+  "winTop"         : "CHEER !",
+  "winBottom"      : " WIN !",
+  "drawTop"        : "... MATCH NUL",
+  "drawBottom"     : "NO WINNER ...",
+  "looseTop"       : "... OH NO !",
+  "looseBottom"    : "YOU LOOSE ...",
+  "buttonComputer" : "VS COMPUTER",
+  "button2Players" : "2 PLAYERS",
+  "buttonNewGame1" : "PLAY",
+  "buttonNewGame2" : "NEW PARTY",
+  "buttonNewGame3" : "PLAY AGAIN"
+
+};
+
+const colors = {
+  "caseWin"        : "white",
+  "caseParty"      : "antiquewhite",
+  "caseStandby"    : "rgb(9, 95, 95)",
+  "winText"        : "white",
+  "looseText"      : "antiquewhite",
+  "bckGrdParty"    : "teal",
+  "bckGrdWin"      : "rgb(250, 220, 70)",
+  "bckGrdLoose"    : "#374046",
+  "buttonSuggest"  : "black",
+  "buttonSelect"   : "rgb(68, 42, 32)",
+  "buttonParty"    : "rgb(250, 250, 170)",
+  "buttonModeOn"   : "rgb(211, 176, 131)",
+  "buttonModeOff"  : "antiquewhite",
+  "scoreTextParty" : "black",
+  "scoreTextLoose" : "white"
+};
+
+const shadows = {
+  "caseWin"   : "0px 0px 20px red",
+  "caseParty" : "0px 0px 15px black",
+  "partyText" : "3px 3px 3px black",
+  "endText"   : "0px 0px 20px fuchsia"
+};
+
+const sets = {
+  "playButton"           : [texts.buttonNewGame1, colors.buttonSuggest],
+  "newPartyButton"       : [texts.buttonNewGame2, colors.buttonParty],
+  "playAgainButton"      : [texts.buttonNewGame3, colors.buttonSuggest],
+  "modeVsComputerButton" : [texts.isOn + texts.buttonComputer, colors.buttonSelect, colors.buttonModeOn, texts.button2Players, colors.buttonParty, colors.buttonModeOff],
+  "mode2PlayersButton"   : [texts.buttonComputer, colors.buttonParty, colors.buttonModeOff, texts.isOn + texts.button2Players, colors.buttonSelect, colors.buttonModeOn],
+  "looseOrDraw"          : [colors.bckGrdLoose, colors.looseText, shadows.endText, colors.looseText, shadows.endText, colors.buttonSelect, colors.buttonSelect, colors.buttonSelect, colors.scoreTextLoose],
+  "party"                : [colors.bckGrdParty, "", shadows.partyText, "", "", colors.buttonParty,colors.buttonParty, colors.buttonParty,colors.scoreTextParty],
+  "win"                  : [colors.bckGrdWin, colors.winText, shadows.endText, colors.winText, shadows.endText, colors.buttonSelect, colors.buttonSelect, colors.buttonSelect, colors.scoreTextParty]
+};
+
+/********************************************************************************************************/
 //***********************************************  ROUTER  *********************************************//
+/********************************************************************************************************/
 
 const rootMode = (x) => {Controller.ChangeMode(x);}
 const rootCase = (x) => {Controller.PlayCase(x);}
 const rootPlay = ( ) => {Controller.NewGame();}
 
-//*********************************************  CONFIG DOM  *******************************************//
-
-const topHTML = document.getElementById("topText");
-const caseHTML = document.getElementsByClassName("case");
-const bottomHTML = document.getElementById("bottomText");
-const newGameHTML = document.getElementById("newGame");
-const computerModeHTML = document.getElementById("computerMode");
-const playersModeHTML = document.getElementById("playersMode");
-const scoreHTML = document.getElementsByClassName("Scores");
-const scoreP1HTML = document.getElementById("Player1Score");
-const scoreP2HTML = document.getElementById("Player2Score");
-
+/********************************************************************************************************/
 //***********************************************  MODELS  *********************************************//
+/********************************************************************************************************/
 
 class Case 
 { 
@@ -48,90 +116,139 @@ class Player
   Init() { this.isWinner = false; }
 }
 
-//***********************************************  DATABASE  *********************************************//
+/********************************************************************************************************/
+//***********************************************  VIEWS  **********************************************//
+/********************************************************************************************************/
 
-const musics = {
-  "clickSong" : "click",
-  "looseSong" : "loose",
-   "drawSong" : "draw",
-    "winSong" : "win"
-};
+class View
+{
+  // INIT
 
-const texts = {
-           "arrow" : " → ",
-  "buttonComputer" : "VS COMPUTER",
-            "isOn" : "➜ ",
-  "button2Players" : "2 PLAYERS",
-  "buttonNewGame1" : "PLAY",
-  "buttonNewGame2" : "NEW PARTY",
-  "buttonNewGame3" : "PLAY AGAIN",
-          "winTop" : "CHEER !",
-       "winBottom" : " WIN !",
-         "drawTop" : "... MATCH NUL",
-      "drawBottom" : "NO WINNER ...",
-        "looseTop" : "... OH NO !",
-     "looseBottom" : "YOU LOOSE ..."
-};
+  static Init()
+  {
+    View.GridReset();
+    View.Colors(sets.party);
+    View.Buttons();
+    View.Scores();
+    if (!gameIsNotStart) { View.PlayerTurn(); }
+  }
 
-const colors = {
-         "caseWin" : "white",
-       "caseParty" : "antiquewhite",
-     "caseStandby" : "rgb(9, 95, 95)",
-         "winText" : "white",
-       "looseText" : "antiquewhite",
-     "bckGrdParty" : "teal",
-       "bckGrdWin" : "rgb(250, 220, 70)",
-     "bckGrdLoose" : "#374046",
-   "buttonSuggest" : "black",
-    "buttonSelect" : "rgb(68, 42, 32)",
-     "buttonParty" : "rgb(250, 250, 170)",
-    "buttonModeOn" : "rgb(211, 176, 131)",
-   "buttonModeOff" : "antiquewhite",
-  "scoreTextParty" : "black",
-  "scoreTextLoose" : "white"
-};
+  // GAME COLORS
 
-const shadows = {
-    "caseWin" : "0px 0px 20px red",
-  "caseParty" : "0px 0px 15px black",
-  "partyText" : "3px 3px 3px black",
-    "endText" : "0px 0px 20px fuchsia"
-};
+  static Colors(setColors)
+  {
+    document.body.style.backgroundColor = setColors[0];
+    dom.top.style.color = setColors[1];
+    dom.top.style.textShadow = setColors[2];
+    dom.bottom.style.color = setColors[3];
+    dom.bottom.style.textShadow = setColors[4];
+    dom.newGame.style.color = setColors[5];
+    dom.playersMode.style.color = setColors[6];
+    dom.computerMode.style.color = setColors[7];
+    dom.score[0].style.color = setColors[8];
+  }
 
-const sets = {
-            "playButton" : [texts.buttonNewGame1,colors.buttonSuggest],
-        "newPartyButton" : [texts.buttonNewGame2,colors.buttonParty],
-       "playAgainButton" : [texts.buttonNewGame3,colors.buttonSuggest],
-  "modeVsComputerButton" : [texts.isOn + texts.buttonComputer,colors.buttonSelect,colors.buttonModeOn,
-                            texts.button2Players,colors.buttonParty,colors.buttonModeOff],
-    "mode2PlayersButton" : [texts.buttonComputer,colors.buttonParty,colors.buttonModeOff,
-                            texts.isOn + texts.button2Players,colors.buttonSelect,colors.buttonModeOn],
-           "looseOrDraw" : [colors.bckGrdLoose,colors.looseText,shadows.endText,
-                            colors.looseText,shadows.endText,colors.buttonSelect,
-                            colors.buttonSelect,colors.buttonSelect,colors.scoreTextLoose],
-                 "party" : [colors.bckGrdParty,"",shadows.partyText,"","",
-                            colors.buttonParty,colors.buttonParty,
-                            colors.buttonParty,colors.scoreTextParty],
-                   "win" : [colors.bckGrdWin,colors.winText,shadows.endText,
-                            colors.winText,shadows.endText,colors.buttonSelect,
-                            colors.buttonSelect,colors.buttonSelect,colors.scoreTextParty]
+  // GRID CASES
+
+  static GridCasePlayed(c)
+  {
+    dom.case[c-1].innerHTML = currentPlayer.value ;
+  }
+
+
+  static WinnersCases()
+  {
+    for (let i = 0 ; i < 3 ; i++) 
+    { 
+      dom.case[(line[lineWinner][i])-1].style.color = colors.caseWin; 
+      dom.case[(line[lineWinner][i])-1].style.textShadow = shadows.caseWin;
+    }
+  }
+
+  static GridReset()
+  {
+    for (let i = 0 ; i < 9 ; i++)
+    {
+      dom.case[i].innerHTML = null;
+      dom.case[i].style.color = colors.caseParty; 
+      dom.case[i].style.textShadow = shadows.caseParty;
+      if (gameIsNotStart) 
+      { dom.case[i].style.backgroundColor = colors.caseStandby; }
+      else 
+      { dom.case[i].style.backgroundColor = colors.caseParty; }
+    }
+  }
+
+  // BUTTONS 
+
+  static Buttons()
+  {
+    if (gameIsNotStart) 
+      { View.PlayButton(sets.playButton) } 
+    else
+    {
+      if (gameIsNotFinish) 
+      { View.PlayButton(sets.newPartyButton) }
+      else 
+      { View.PlayButton(sets.playAgainButton) }
+    }
+
+    if (gameModeVsComputer)
+    { View.ButtonsMode(sets.modeVsComputerButton); }
+    else
+    { View.ButtonsMode(sets.mode2PlayersButton); }
+  }
+
+  static PlayButton(buttonPlay)
+  {
+    dom.newGame.innerHTML = buttonPlay[0];
+    dom.newGame.style.color = buttonPlay[1];
+  }
+
+  static ButtonsMode(buttonsMode)
+  {
+    dom.computerMode.innerHTML = buttonsMode[0];
+    dom.computerMode.style.color = buttonsMode[1];
+    dom.computerMode.style.backgroundColor = buttonsMode[2];
+    dom.playersMode.innerHTML = buttonsMode[3];
+    dom.playersMode.style.color = buttonsMode[4];
+    dom.playersMode.style.backgroundColor = buttonsMode[5];
+  }
+
+  // TEXTS
+
+  static PlayerTurn()
+  {
+    dom.top.style.color = currentPlayer.color;
+    dom.top.innerHTML = currentPlayer.name + texts.arrow + currentPlayer.value;
+  }
+
+  static TopBottomText(topText,bottomText)
+  {
+    dom.top.innerHTML = topText;
+    dom.bottom.innerHTML = bottomText;
+  }
+
+  // SCORES
+
+  static Scores()
+  {
+    if (gameModeVsComputer)
+    { View.ScoresText(player1,computer,1); }
+    else
+    { View.ScoresText(player1,player2,0); }
+  }
+
+  static ScoresText(p1,p2,mode)
+  {
+    dom.scoreP1.innerHTML = p1.name + texts.arrow + p1.scores[mode];
+    dom.scoreP2.innerHTML = p2.name + texts.arrow + p2.scores[mode];
+  }
 }
 
-//*********************************************  CONFIG GAME *******************************************//
-
-let gameModeVsComputer = true;
-let gameIsNotFinish = true;
-let gameIsNotStart = true;
-let player1 = new Player("PLAYER 1","O",false,"salmon",[0,0],false); 
-let player2 = new Player("PLAYER 2","X",false,"aquamarine",[0],false);
-let computer = new Player("COMPUTER","X",false,"black",[0,0],true);
-let currentPlayer = player2;
-let playerStartTurn = currentPlayer;
-let gridCase = [null]; // => to start at gridCase[1]
-let line = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
-let lineWinner = null;
-
-//***********************************************  CONTROLLERS  *********************************************//
+/********************************************************************************************************/
+//*******************************************  CONTROLLERS  ********************************************//
+/********************************************************************************************************/
 
 class Controller
 {
@@ -332,134 +449,20 @@ class Controller
   }
 }
 
-//***********************************************  VIEWS  *********************************************//
+/********************************************************************************************************/
+//***********************************************  CONFIG  *********************************************//
+/********************************************************************************************************/
 
-class View
-{
-  // INIT
+let gameModeVsComputer = true;
+let gameIsNotFinish = true;
+let gameIsNotStart = true;
+let player1 = new Player("PLAYER 1","O",false,"salmon",[0,0],false); 
+let player2 = new Player("PLAYER 2","X",false,"aquamarine",[0],false);
+let computer = new Player("COMPUTER","X",false,"black",[0,0],true);
+let currentPlayer = player2;
+let playerStartTurn = currentPlayer;
+let gridCase = [null]; // => to start at gridCase[1]
+let line = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
+let lineWinner = null;
 
-  static Init()
-  {
-    View.GridReset();
-    View.Colors(sets.party);
-    View.Buttons();
-    View.Scores();
-    if (!gameIsNotStart) { View.PlayerTurn(); }
-  }
-
-  // GAME COLORS
-
-  static Colors(setColors)
-  {
-    document.body.style.backgroundColor = setColors[0];
-    topHTML.style.color = setColors[1];
-    topHTML.style.textShadow = setColors[2];
-    bottomHTML.style.color = setColors[3];
-    bottomHTML.style.textShadow = setColors[4];
-    newGameHTML.style.color = setColors[5];
-    playersModeHTML.style.color = setColors[6];
-    computerModeHTML.style.color = setColors[7];
-    scoreHTML[0].style.color = setColors[8];
-  }
-
-  // GRID CASES
-
-  static GridCasePlayed(c)
-  {
-    caseHTML[c-1].innerHTML = currentPlayer.value ;
-  }
-
-
-  static WinnersCases()
-  {
-    for (let i = 0 ; i < 3 ; i++) 
-    { 
-      caseHTML[(line[lineWinner][i])-1].style.color = colors.caseWin; 
-      caseHTML[(line[lineWinner][i])-1].style.textShadow = shadows.caseWin;
-    }
-  }
-
-  static GridReset()
-  {
-    for (let i = 0 ; i < 9 ; i++)
-    {
-      caseHTML[i].innerHTML = null;
-      caseHTML[i].style.color = colors.caseParty; 
-      caseHTML[i].style.textShadow = shadows.caseParty;
-      if (gameIsNotStart) 
-      { caseHTML[i].style.backgroundColor = colors.caseStandby; }
-      else 
-      { caseHTML[i].style.backgroundColor = colors.caseParty; }
-    }
-  }
-
-  // BUTTONS 
-
-  static Buttons()
-  {
-    if (gameIsNotStart) 
-      { View.PlayButton(sets.playButton) } 
-    else
-    {
-      if (gameIsNotFinish) 
-      { View.PlayButton(sets.newPartyButton) }
-      else 
-      { View.PlayButton(sets.playAgainButton) }
-    }
-
-    if (gameModeVsComputer)
-    { View.ButtonsMode(sets.modeVsComputerButton); }
-    else
-    { View.ButtonsMode(sets.mode2PlayersButton); }
-  }
-
-  static PlayButton(buttonPlay)
-  {
-    newGameHTML.innerHTML = buttonPlay[0];
-    newGameHTML.style.color = buttonPlay[1];
-  }
-
-  static ButtonsMode(buttonsMode)
-  {
-    computerModeHTML.innerHTML = buttonsMode[0];
-    computerModeHTML.style.color = buttonsMode[1];
-    computerModeHTML.style.backgroundColor = buttonsMode[2];
-    playersModeHTML.innerHTML = buttonsMode[3];
-    playersModeHTML.style.color = buttonsMode[4];
-    playersModeHTML.style.backgroundColor = buttonsMode[5];
-  }
-
-  // TEXTS
-
-  static PlayerTurn()
-  {
-    topHTML.style.color = currentPlayer.color;
-    topHTML.innerHTML = currentPlayer.name + texts.arrow + currentPlayer.value;
-  }
-
-  static TopBottomText(topText,bottomText)
-  {
-    topHTML.innerHTML = topText;
-    bottomHTML.innerHTML = bottomText;
-  }
-
-  // SCORES
-
-  static Scores()
-  {
-    if (gameModeVsComputer)
-    { View.ScoresText(player1,computer,1); }
-    else
-    { View.ScoresText(player1,player2,0); }
-  }
-
-  static ScoresText(p1,p2,mode)
-  {
-    scoreP1HTML.innerHTML = p1.name + texts.arrow + p1.scores[mode];
-    scoreP2HTML.innerHTML = p2.name + texts.arrow + p2.scores[mode];
-  }
-}
-
-//***************************  STARTING LAUNCH  ***************************//
-
-View.Init();
+View.Init(); // => STARTING LAUNCH
