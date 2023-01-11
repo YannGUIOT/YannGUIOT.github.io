@@ -4,6 +4,18 @@ const rootCase = (x) => {Controller.PlayCase(x);}
 const rootPlay = () => {Controller.NewGame();} 
 const rootMode = (x) => {Controller.ChangeMode(x);} 
 
+//*********************************************  CONFIG DOM  *******************************************//
+
+const topHTML = document.getElementById("topText");
+const caseHTML = document.getElementsByClassName("case");
+const bottomHTML = document.getElementById("bottomText");
+const newGameHTML = document.getElementById("newGame");
+const computerModeHTML = document.getElementById("computerMode");
+const playersModeHTML = document.getElementById("playersMode");
+const scoreHTML = document.getElementsByClassName("Scores");
+const scoreP1HTML = document.getElementById("Player1Score");
+const scoreP2HTML = document.getElementById("Player2Score");
+
 //***********************************************  MODELS  *********************************************//
 
 class Case 
@@ -38,84 +50,68 @@ class Player
 
 //***********************************************  DATABASE  *********************************************//
 
-// DOM
-const topHTML = document.getElementById("topText");
-const caseHTML = document.getElementsByClassName("case");
-const bottomHTML = document.getElementById("bottomText");
-const newGameHTML = document.getElementById("newGame");
-const computerModeHTML = document.getElementById("computerMode");
-const playersModeHTML = document.getElementById("playersMode");
-const scoreHTML = document.getElementsByClassName("Scores");
-const scoreP1HTML = document.getElementById("Player1Score");
-const scoreP2HTML = document.getElementById("Player2Score");
-
 // Musics
-const clickSong = "click";
-const looseSong = "loose";
-const drawSong = "draw";
-const winSong = "win";
+const musics = {
+  "clickSong" : "click",
+  "looseSong" : "loose",
+   "drawSong" : "draw",
+    "winSong" : "win"
+};
 
-// Arrow Text
-const arrowText = " → ";
+const texts = {
+           "arrow" : " → ",
+  "buttonComputer" : "VS COMPUTER",
+            "isOn" : "➜ ",
+  "button2Players" : "2 PLAYERS",
+  "buttonNewGame1" : "PLAY",
+  "buttonNewGame2" : "NEW PARTY",
+  "buttonNewGame3" : "PLAY AGAIN",
+          "winTop" : "CHEER !",
+       "winBottom" : " WIN !",
+         "drawTop" : "... MATCH NUL",
+      "drawBottom" : "NO WINNER ...",
+        "looseTop" : "... OH NO !",
+     "looseBottom" : "YOU LOOSE ..."
+};
 
-// Buttons Text
-const buttonComputerText = "VS COMPUTER";
-const isOnText = "➜ ";
-const button2PlayersText = "2 PLAYERS";
-const buttonNewGameText1 = "PLAY";
-const buttonNewGameText2 = "NEW PARTY";
-const buttonNewGameText3 = "PLAY AGAIN";
+const colors = {
+         "caseWin" : "white",
+       "caseParty" : "antiquewhite",
+     "caseStandby" : "rgb(9, 95, 95)",
+         "winText" : "white",
+       "looseText" : "antiquewhite",
+     "bckGrdParty" : "teal",
+       "bckGrdWin" : "rgb(250, 220, 70)",
+     "bckGrdLoose" : "#374046",
+   "buttonSuggest" : "black",
+    "buttonSelect" : "rgb(68, 42, 32)",
+     "buttonParty" : "rgb(250, 250, 170)",
+    "buttonModeOn" : "rgb(211, 176, 131)",
+   "buttonModeOff" : "antiquewhite",
+  "scoreTextParty" : "black",
+  "scoreTextLoose" : "white"
+};
 
-// EndGame Text
-const winTopText = "CHEER !";
-const winBottomText = " WIN !";
-const drawTopText = "... MATCH NUL";
-const drawBottomText = "NO WINNER ...";
-const looseTopText = "... OH NO !";
-const looseBottomText = "YOU LOOSE ...";
+const shadows = {
+    "caseWin" : "0px 0px 20px red",
+  "caseParty" : "0px 0px 15px black",
+  "partyText" : "3px 3px 3px black",
+    "endText" : "0px 0px 20px fuchsia"
+};
 
-// CaseHTML COLORS
-const caseHTMLwinColor = "white";
-const caseHTMLwinShadow = "0px 0px 20px red";
-const caseHTMLpartyColor = "antiquewhite";
-const caseHTMLpartyShadow = "0px 0px 15px black";
-const caseHTMLstandStart = "rgb(9, 95, 95)";
+const sets = {
+                 "party" : [colors.bckGrdParty,"",shadows.partyText,"","",colors.buttonParty,colors.buttonParty,colors.buttonParty,colors.scoreTextParty],
+                   "win" : [colors.bckGrdWin,colors.winText,shadows.endText,colors.winText,shadows.endText,colors.buttonSelect,colors.buttonSelect,colors.buttonSelect,colors.scoreTextParty],
+           "looseOrDraw" : [colors.bckGrdLoose,colors.looseText,shadows.endText,colors.looseText,shadows.endText,colors.buttonSelect,colors.buttonSelect,colors.buttonSelect,colors.scoreTextLoose],
+  "modeVsComputerButton" : [texts.isOn + texts.buttonComputer,colors.buttonSelect,colors.buttonModeOn,texts.button2Players,colors.buttonParty,colors.buttonModeOff],
+    "mode2PlayersButton" : [texts.buttonComputer,colors.buttonParty,colors.buttonModeOff,texts.isOn + texts.button2Players,colors.buttonSelect,colors.buttonModeOn],
+            "playButton" : [texts.buttonNewGame1,colors.buttonSuggest],
+        "newPartyButton" : [texts.buttonNewGame2,colors.buttonParty],
+       "playAgainButton" : [texts.buttonNewGame3,colors.buttonSuggest]
+}
 
-// PARTY Text COLORS
-const partyTextShadow = "3px 3px 3px black";
+//*********************************************  CONFIG GAME *******************************************//
 
-// END's Text COLORS
-const winTextColor = "white";
-const looseTextColor = "antiquewhite";
-const endTextShadow = "0px 0px 20px fuchsia";
-
-// BackGround COLORS
-const bckGrdPartyColor = "teal";
-const bckGrdWinColor = "rgb(250, 220, 70)";
-const bckGrdLooseColor = "#374046";
-
-// Buttons COLORS
-const buttonsSuggestColor = "black";
-const buttonsSelectColor = "rgb(68, 42, 32)";
-const buttonsPartyColor = "rgb(250, 250, 170)";
-const buttonsModeOnColor = "rgb(211, 176, 131)";
-const buttonsModeOffColor = "antiquewhite";
-
-// Scores COLORS
-const scoreTextPartyColor = "black";
-const scoreTextLooseColor = "white";
-
-// SETS
-const partyColors = [bckGrdPartyColor,"",partyTextShadow,"","",buttonsPartyColor,buttonsPartyColor,buttonsPartyColor,scoreTextPartyColor];
-const winColors = [bckGrdWinColor,winTextColor,endTextShadow,winTextColor,endTextShadow,buttonsSelectColor,buttonsSelectColor,buttonsSelectColor,scoreTextPartyColor];
-const looseOrDrawColors = [bckGrdLooseColor,looseTextColor,endTextShadow,looseTextColor,endTextShadow,buttonsSelectColor,buttonsSelectColor,buttonsSelectColor,scoreTextLooseColor];
-const modeVsComputerButtonSet = [isOnText + buttonComputerText,buttonsSelectColor,buttonsModeOnColor,button2PlayersText,buttonsPartyColor,buttonsModeOffColor];
-const mode2PlayersButtonSet = [buttonComputerText,buttonsPartyColor,buttonsModeOffColor,isOnText + button2PlayersText,buttonsSelectColor,buttonsModeOnColor];
-const playButtonSet = [buttonNewGameText1,buttonsSuggestColor];
-const newPartyButtonSet = [buttonNewGameText2,buttonsPartyColor];
-const playAgainButtonSet = [buttonNewGameText3,buttonsSuggestColor];
-
-// GAME VARS
 let gameModeVsComputer = true;
 let gameIsNotFinish = true;
 let gameIsNotStart = true;
@@ -202,7 +198,7 @@ class Controller
     {
       gridCase[c].play();
       View.GridCasePlayed(c);
-      Controller.PlayMusic(clickSong);
+      Controller.PlayMusic(musics.clickSong);
       Controller.AnalyseGame();
       if (gameIsNotFinish && gameModeVsComputer) { Controller.ComputerPlayCase(); }
       if (gameIsNotFinish && !gameModeVsComputer) { Controller.ChangePlayer(); }
@@ -256,10 +252,10 @@ class Controller
     {
       if (gameModeVsComputer) {currentPlayer.scores[1] += 1 ;}
       else {currentPlayer.scores[0] += 1 ;}
-      View.TopBottomText(winTopText,currentPlayer.name + winBottomText);
+      View.TopBottomText(texts.winTop,currentPlayer.name + texts.winBottom);
       View.WinnersCases();
-      View.Colors(winColors);
-      Controller.PlayMusic(winSong);
+      View.Colors(sets.win);
+      Controller.PlayMusic(musics.winSong);
     }
     else 
     {
@@ -267,15 +263,15 @@ class Controller
       {
         currentPlayer.scores[1] += 1 ;
         View.WinnersCases();
-        View.TopBottomText(looseTopText,looseBottomText);
-        Controller.PlayMusic(looseSong);
+        View.TopBottomText(texts.looseTop,texts.looseBottom);
+        Controller.PlayMusic(musics.looseSong);
       }
       else
       {
-        View.TopBottomText(drawTopText,drawBottomText);
-        Controller.PlayMusic(drawSong);
+        View.TopBottomText(texts.drawTop,texts.drawBottom);
+        Controller.PlayMusic(musics.drawSong);
       }
-      View.Colors(looseOrDrawColors);
+      View.Colors(sets.looseOrDraw);
     }
     View.Buttons();
     View.Scores();
@@ -339,19 +335,19 @@ class View
   static Buttons()
   {
     if (gameIsNotStart) 
-      { View.PlayButton(playButtonSet) } 
+      { View.PlayButton(sets.playButton) } 
     else
     {
       if (gameIsNotFinish) 
-      { View.PlayButton(newPartyButtonSet) }
+      { View.PlayButton(sets.newPartyButton) }
       else 
-      { View.PlayButton(playAgainButtonSet) }
+      { View.PlayButton(sets.playAgainButton) }
     }
 
     if (gameModeVsComputer)
-    { View.ButtonsMode(modeVsComputerButtonSet); }
+    { View.ButtonsMode(sets.modeVsComputerButton); }
     else
-    { View.ButtonsMode(mode2PlayersButtonSet); }
+    { View.ButtonsMode(sets.mode2PlayersButton); }
   }
 
   static PlayButton(buttonPlay)
@@ -372,17 +368,17 @@ class View
 
   // GAME COLORS
 
-  static Colors(colors)
+  static Colors(setColors)
   {
-    document.body.style.backgroundColor = colors[0];
-    topHTML.style.color = colors[1];
-    topHTML.style.textShadow = colors[2];
-    bottomHTML.style.color = colors[3];
-    bottomHTML.style.textShadow = colors[4];
-    newGameHTML.style.color = colors[5];
-    playersModeHTML.style.color = colors[6];
-    computerModeHTML.style.color = colors[7];
-    scoreHTML[0].style.color = colors[8];
+    document.body.style.backgroundColor = setColors[0];
+    topHTML.style.color = setColors[1];
+    topHTML.style.textShadow = setColors[2];
+    bottomHTML.style.color = setColors[3];
+    bottomHTML.style.textShadow = setColors[4];
+    newGameHTML.style.color = setColors[5];
+    playersModeHTML.style.color = setColors[6];
+    computerModeHTML.style.color = setColors[7];
+    scoreHTML[0].style.color = setColors[8];
   }
 
   // GRID CASES
@@ -397,8 +393,8 @@ class View
   {
     for (let i = 0 ; i < 3 ; i++) 
     { 
-      caseHTML[(line[lineWinner][i])-1].style.color = caseHTMLwinColor; 
-      caseHTML[(line[lineWinner][i])-1].style.textShadow = caseHTMLwinShadow;
+      caseHTML[(line[lineWinner][i])-1].style.color = colors.caseWin; 
+      caseHTML[(line[lineWinner][i])-1].style.textShadow = shadows.caseWin;
     }
   }
 
@@ -407,12 +403,12 @@ class View
     for (let i = 0 ; i < 9 ; i++)
     {
       caseHTML[i].innerHTML = null;
-      caseHTML[i].style.color = caseHTMLpartyColor; 
-      caseHTML[i].style.textShadow = caseHTMLpartyShadow;
+      caseHTML[i].style.color = colors.caseParty; 
+      caseHTML[i].style.textShadow = shadows.caseParty;
       if (gameIsNotStart) 
-      { caseHTML[i].style.backgroundColor = caseHTMLstandStart; }
+      { caseHTML[i].style.backgroundColor = colors.caseStandby; }
       else 
-      { caseHTML[i].style.backgroundColor = caseHTMLpartyColor; }
+      { caseHTML[i].style.backgroundColor = colors.caseParty; }
     }
   }
 
@@ -421,7 +417,7 @@ class View
   static Init()
   {
     View.GridReset();
-    View.Colors(partyColors);
+    View.Colors(sets.party);
     View.Buttons();
     View.Scores();
     if (!gameIsNotStart) { View.PlayerTurn(); }
@@ -439,8 +435,8 @@ class View
 
   static ScoresText(p1,p2,mode)
   {
-    scoreP1HTML.innerHTML = p1.name + arrowText + p1.scores[mode];
-    scoreP2HTML.innerHTML = p2.name + arrowText + p2.scores[mode];
+    scoreP1HTML.innerHTML = p1.name + texts.arrow + p1.scores[mode];
+    scoreP2HTML.innerHTML = p2.name + texts.arrow + p2.scores[mode];
   }
 
   // TEXTS
@@ -448,7 +444,7 @@ class View
   static PlayerTurn()
   {
     topHTML.style.color = currentPlayer.color;
-    topHTML.innerHTML = currentPlayer.name + arrowText + currentPlayer.value;
+    topHTML.innerHTML = currentPlayer.name + texts.arrow + currentPlayer.value;
   }
 
   static TopBottomText(topText,bottomText)
