@@ -22,9 +22,14 @@ const musics = {
 };
 
 const texts = {
+  "player1Name"    : "PLAYER 1",
+  "player2Name"    : "PLAYER 2",
+  "computerName"   : "COMPUTER",
+  "player1Value"   : "O",
+  "player2Value"   : "X",
   "isOn"           : "➜ ",
   "arrow"          : " → ",
-  "winTop"         : "CHEER !",
+  "winTop"         : "BRAVO !",
   "winBottom"      : " WIN !",
   "drawTop"        : "... MATCH NUL",
   "drawBottom"     : "NO WINNER ...",
@@ -35,10 +40,12 @@ const texts = {
   "buttonNewGame1" : "PLAY",
   "buttonNewGame2" : "NEW PARTY",
   "buttonNewGame3" : "PLAY AGAIN"
-
 };
 
 const colors = {
+  "player1"        : "salmon",
+  "player2"        : "aquamarine",
+  "computer"       : "black",
   "caseWin"        : "white",
   "caseParty"      : "antiquewhite",
   "caseStandby"    : "rgb(9, 95, 95)",
@@ -453,15 +460,15 @@ class Controller
 //***********************************************  CONFIG  *********************************************//
 /********************************************************************************************************/
 
+let player1 = new Player(texts.player1Name, texts.player1Value, false, colors.player1, [0,0], false); 
+let player2 = new Player(texts.player2Name, texts.player2Value, false, colors.player2, [0,null], false);
+let computer = new Player(texts.computerName, texts.player2Value, false, colors.computer, [0,0], true);
+let currentPlayer = player2;
+let playerStartTurn = currentPlayer;
 let gameModeVsComputer = true;
 let gameIsNotFinish = true;
 let gameIsNotStart = true;
-let player1 = new Player("PLAYER 1","O",false,"salmon",[0,0],false); 
-let player2 = new Player("PLAYER 2","X",false,"aquamarine",[0],false);
-let computer = new Player("COMPUTER","X",false,"black",[0,0],true);
-let currentPlayer = player2;
-let playerStartTurn = currentPlayer;
-let gridCase = [null]; // => to start at gridCase[1]
-let line = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
 let lineWinner = null;
+let gridCase = [null]; // to start at gridCase[1]
+let line = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
 View.Init();
