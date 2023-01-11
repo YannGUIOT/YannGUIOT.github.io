@@ -71,6 +71,7 @@ const shadows = {
 };
 
 const sets = {
+  "line"                 : [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]],
   "playButton"           : [texts.buttonNewGame1, colors.buttonSuggest],
   "newPartyButton"       : [texts.buttonNewGame2, colors.buttonParty],
   "playAgainButton"      : [texts.buttonNewGame3, colors.buttonSuggest],
@@ -78,8 +79,7 @@ const sets = {
   "mode2PlayersButton"   : [texts.buttonComputer, colors.buttonParty, colors.buttonModeOff, texts.isOn + texts.button2Players, colors.buttonSelect, colors.buttonModeOn],
   "looseOrDraw"          : [colors.bckGrdLoose, colors.looseText, shadows.endText, colors.looseText, shadows.endText, colors.buttonSelect, colors.buttonSelect, colors.buttonSelect, colors.scoreTextLoose],
   "party"                : [colors.bckGrdParty, "", shadows.partyText, "", "", colors.buttonParty,colors.buttonParty, colors.buttonParty,colors.scoreTextParty],
-  "win"                  : [colors.bckGrdWin, colors.winText, shadows.endText, colors.winText, shadows.endText, colors.buttonSelect, colors.buttonSelect, colors.buttonSelect, colors.scoreTextParty],
-  "line"                 : [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]]
+  "win"                  : [colors.bckGrdWin, colors.winText, shadows.endText, colors.winText, shadows.endText, colors.buttonSelect, colors.buttonSelect, colors.buttonSelect, colors.scoreTextParty]
 };
 
 /********************************************************************************************************/
