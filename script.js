@@ -50,7 +50,6 @@ class Player
 
 //***********************************************  DATABASE  *********************************************//
 
-// Musics
 const musics = {
   "clickSong" : "click",
   "looseSong" : "loose",
@@ -126,7 +125,7 @@ let gameIsNotStart = true;
 let player1 = new Player("PLAYER 1","O",false,"salmon",[0,0],false); 
 let player2 = new Player("PLAYER 2","X",false,"aquamarine",[0],false);
 let computer = new Player("COMPUTER","X",false,"black",[0,0],true);
-let currentPlayer = player2; // to bascul first player at NewGame()
+let currentPlayer = player2;
 let playerStartTurn = currentPlayer;
 let gridCase = [null]; // => to start at gridCase[1]
 let line = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
@@ -136,41 +135,43 @@ let lineWinner = null;
 
 class Controller
 {
-  // ANALYSES
+  // INIT
 
-  static AnalyseGame()
+  static InitAll()
   {
-    Controller.SearchIfWin(currentPlayer.value);
-    if (gameIsNotFinish == true) { gameIsNotFinish = Controller.SearchEmptyCase(); }
-    if (gameIsNotFinish == false) { Controller.GameEnding(); }
+    gameIsNotStart = false;
+    gameIsNotFinish = true;
+    View.TopBottomText(null,null);
+    gridCase = [null];
+    player1.Init();
+    player2.Init();
+    computer.Init();
+    Controller.CasesInit();
   }
 
-  static SearchIfWin(val)
+  static CasesInit()
   {
-    for (let l in line )
-    {
-      if (Controller.TestLine(l, val))
-      {
-        gameIsNotFinish = false;
-        currentPlayer.Victory();
-        lineWinner = l;
-        break;
-      }
-    }
+    for (let i = 0 ; i < 9 ; i++) 
+    { gridCase.push(new Case(false,null)); }
   }
 
-  static TestLine(l, val)
+  static NewGame()
   {
-    if ( (gridCase[line[l][0]].value == gridCase[line[l][1]].value
-      && gridCase[line[l][0]].value == gridCase[line[l][2]].value
-      && gridCase[line[l][0]].value == val) ) { return true; }
+    Controller.InitAll();
+    Controller.StartTurnAssignment();
+    View.Init();
+    if (currentPlayer.isComputer) {Controller.ComputerPlayCase();}
   }
 
-  static SearchEmptyCase()
+  // MODES
+
+  static ChangeMode(m)
   {
-    let emptyCase = [];
-    for (let i = 1 ; i < 10 ; i++) { emptyCase.push(gridCase[i].value); }
-    return emptyCase.includes(null);
+    if (m == 1) {gameModeVsComputer = true;}
+    if (m == 2) {gameModeVsComputer = false;}
+    gameIsNotStart = true;
+    View.TopBottomText(null,null);
+    View.Init();
   }
 
   // ASSIGNMENTS
@@ -252,6 +253,43 @@ class Controller
     }
   }
 
+  // ANALYSES
+
+  static AnalyseGame()
+  {
+    Controller.SearchIfWin(currentPlayer.value);
+    if (gameIsNotFinish == true) { gameIsNotFinish = Controller.SearchEmptyCase(); }
+    if (gameIsNotFinish == false) { Controller.GameEnding(); }
+  }
+
+  static SearchIfWin(val)
+  {
+    for (let l in line )
+    {
+      if (Controller.TestLine(l, val))
+      {
+        gameIsNotFinish = false;
+        currentPlayer.Victory();
+        lineWinner = l;
+        break;
+      }
+    }
+  }
+
+  static TestLine(l, val)
+  {
+    if ( (gridCase[line[l][0]].value == gridCase[line[l][1]].value
+      && gridCase[line[l][0]].value == gridCase[line[l][2]].value
+      && gridCase[line[l][0]].value == val) ) { return true; }
+  }
+
+  static SearchEmptyCase()
+  {
+    let emptyCase = [];
+    for (let i = 1 ; i < 10 ; i++) { emptyCase.push(gridCase[i].value); }
+    return emptyCase.includes(null);
+  }
+
   // END GAME
 
   static GameEnding()
@@ -285,45 +323,6 @@ class Controller
     View.Scores();
   }
 
-  // INIT
-
-  static InitAll()
-  {
-    gameIsNotStart = false;
-    gameIsNotFinish = true;
-    View.TopBottomText(null,null);
-    gridCase = [null];
-    player1.Init();
-    player2.Init();
-    computer.Init();
-    Controller.CasesInit();
-  }
-
-  static CasesInit()
-  {
-    for (let i = 0 ; i < 9 ; i++) 
-    { gridCase.push(new Case(false,null)); }
-  }
-
-  static NewGame()
-  {
-    Controller.InitAll();
-    Controller.StartTurnAssignment();
-    View.Init();
-    if (currentPlayer.isComputer) {Controller.ComputerPlayCase();}
-  }
-
-  // MODES
-
-  static ChangeMode(m)
-  {
-    if (m == 1) {gameModeVsComputer = true;}
-    if (m == 2) {gameModeVsComputer = false;}
-    gameIsNotStart = true;
-    View.TopBottomText(null,null);
-    View.Init();
-  }
-
   // MUSIC
 
   static PlayMusic(zic)
@@ -331,47 +330,21 @@ class Controller
     let sample = new Audio('assets/audio/'+zic+'.mp3');
     sample.play();
   }
-
 }
 
 //***********************************************  VIEWS  *********************************************//
 
 class View
 {
-  // BUTTONS 
+  // INIT
 
-  static Buttons()
+  static Init()
   {
-    if (gameIsNotStart) 
-      { View.PlayButton(sets.playButton) } 
-    else
-    {
-      if (gameIsNotFinish) 
-      { View.PlayButton(sets.newPartyButton) }
-      else 
-      { View.PlayButton(sets.playAgainButton) }
-    }
-
-    if (gameModeVsComputer)
-    { View.ButtonsMode(sets.modeVsComputerButton); }
-    else
-    { View.ButtonsMode(sets.mode2PlayersButton); }
-  }
-
-  static PlayButton(buttonPlay)
-  {
-    newGameHTML.innerHTML = buttonPlay[0];
-    newGameHTML.style.color = buttonPlay[1];
-  }
-
-  static ButtonsMode(buttonsMode)
-  {
-    computerModeHTML.innerHTML = buttonsMode[0];
-    computerModeHTML.style.color = buttonsMode[1];
-    computerModeHTML.style.backgroundColor = buttonsMode[2];
-    playersModeHTML.innerHTML = buttonsMode[3];
-    playersModeHTML.style.color = buttonsMode[4];
-    playersModeHTML.style.backgroundColor = buttonsMode[5];
+    View.GridReset();
+    View.Colors(sets.party);
+    View.Buttons();
+    View.Scores();
+    if (!gameIsNotStart) { View.PlayerTurn(); }
   }
 
   // GAME COLORS
@@ -420,15 +393,54 @@ class View
     }
   }
 
-  // INIT
+  // BUTTONS 
 
-  static Init()
+  static Buttons()
   {
-    View.GridReset();
-    View.Colors(sets.party);
-    View.Buttons();
-    View.Scores();
-    if (!gameIsNotStart) { View.PlayerTurn(); }
+    if (gameIsNotStart) 
+      { View.PlayButton(sets.playButton) } 
+    else
+    {
+      if (gameIsNotFinish) 
+      { View.PlayButton(sets.newPartyButton) }
+      else 
+      { View.PlayButton(sets.playAgainButton) }
+    }
+
+    if (gameModeVsComputer)
+    { View.ButtonsMode(sets.modeVsComputerButton); }
+    else
+    { View.ButtonsMode(sets.mode2PlayersButton); }
+  }
+
+  static PlayButton(buttonPlay)
+  {
+    newGameHTML.innerHTML = buttonPlay[0];
+    newGameHTML.style.color = buttonPlay[1];
+  }
+
+  static ButtonsMode(buttonsMode)
+  {
+    computerModeHTML.innerHTML = buttonsMode[0];
+    computerModeHTML.style.color = buttonsMode[1];
+    computerModeHTML.style.backgroundColor = buttonsMode[2];
+    playersModeHTML.innerHTML = buttonsMode[3];
+    playersModeHTML.style.color = buttonsMode[4];
+    playersModeHTML.style.backgroundColor = buttonsMode[5];
+  }
+
+  // TEXTS
+
+  static PlayerTurn()
+  {
+    topHTML.style.color = currentPlayer.color;
+    topHTML.innerHTML = currentPlayer.name + texts.arrow + currentPlayer.value;
+  }
+
+  static TopBottomText(topText,bottomText)
+  {
+    topHTML.innerHTML = topText;
+    bottomHTML.innerHTML = bottomText;
   }
 
   // SCORES
@@ -446,21 +458,6 @@ class View
     scoreP1HTML.innerHTML = p1.name + texts.arrow + p1.scores[mode];
     scoreP2HTML.innerHTML = p2.name + texts.arrow + p2.scores[mode];
   }
-
-  // TEXTS
-
-  static PlayerTurn()
-  {
-    topHTML.style.color = currentPlayer.color;
-    topHTML.innerHTML = currentPlayer.name + texts.arrow + currentPlayer.value;
-  }
-
-  static TopBottomText(topText,bottomText)
-  {
-    topHTML.innerHTML = topText;
-    bottomHTML.innerHTML = bottomText;
-  }
-
 }
 
 //***************************  STARTING LAUNCH  ***************************//
