@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="script.js" defer></script>
+	<title> OX - MORPION - XO </title>
+</head>
+<body>
+	<div class="content">
+		<header> LE JEU DU MORPION </header>
+
+		<div class="topText">
+			<p><span id="topText"></span></p>
+		</div>
+
+		<section>   
+			<button class="case" onclick="rootCase(1)"> </button>
+			<button class="case" onclick="rootCase(2)"> </button>
+			<button class="case" onclick="rootCase(3)"> </button>
+			<button class="case" onclick="rootCase(4)"> </button>
+			<button class="case" onclick="rootCase(5)"> </button>
+			<button class="case" onclick="rootCase(6)"> </button>
+			<button class="case" onclick="rootCase(7)"> </button>
+			<button class="case" onclick="rootCase(8)"> </button>
+			<button class="case" onclick="rootCase(9)"> </button>
+		</section>
+
+		<div class="bottomText">
+			<p><span id="bottomText"></span></p>
+		</div>
+
+		<div class="choices">
+			<button id="newGame" onclick="rootPlay()"></button> 
+			<button id="computerMode" onclick="rootMode(1)"></button> 
+			<button id="playersMode" onclick="rootMode(2)"></button> 
+		</div>
+
+		<div class="Scores">
+			<p><u>SCORES</u></p>
+			<p><span id="Player1Score"></span></p>
+			<p><span id="Player2Score"></span></p>
+		</div>
+	</div>
+</body>
+
+</html>

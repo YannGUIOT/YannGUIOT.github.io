@@ -1,0 +1,187 @@
+body {
+  margin: 0;
+  background-color: #191A1C;
+  font-family: 'Inter', sans-serif;
+}
+
+nav {
+  background-color: #202529; 
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav li {
+  float: left;
+}
+
+nav a {
+  padding-left: 32px;
+}
+
+a {
+  color: rgb(211, 210, 210);
+  text-decoration: none;
+}
+
+nav span {
+  color: whitesmoke;
+  padding-left: 32px;
+  font-size: 1.6em;
+}
+
+.photoProfil {
+  margin-top: -50px;
+  height: 296px;
+  width: 296px;
+  border-radius: 50%;
+  border: 1px black;
+  background-color: rgb(36, 119, 190);
+  overflow: hidden; /* empêche l'image de dépasser de la div */
+}
+
+#photo {
+  margin-left: -50px;
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.name {
+  color: darkgray;
+  font-size: 1.3em;
+  border-bottom: 1px solid #414040;
+}
+
+.contact {
+  color: rgb(160, 145, 124);
+  font-size: 0.9em;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* align-items: center; */
+}
+
+.welcomeBan {
+  width: 896px;
+  height: 176px;
+  overflow: hidden; /* empêche l'image de dépasser de la div */
+}
+
+.emptyTopLineBottom {
+  height: 8vh;
+  border-bottom: 1px solid #414040;
+}
+
+.links {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.link {
+  display: flex;
+  height: 32px;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2em;
+}
+
+.project, .projects {
+ margin-top: 15px;
+}
+
+.description {
+  margin-left: 20px;
+  border-left: 1px solid #414040;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  width: 30em;
+  height: 2.5em;
+  color: rgb(215, 218, 215);
+  border: 1px solid #414040;
+  border-radius: 10px;
+
+}
+
+.descriptionLink {
+  margin-left: -12px;
+  display: flex;
+  height: 16px;
+  align-items: center;
+  gap: 1em;
+  font-size: 1.2em;
+}
+
+.projectTitle {
+  color: #3f90ec;
+}
+
+
+.languages {
+  height: 14px;
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgray;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+#POOMVC {
+  font-size: 0.7em;
+}
+
+.round {
+  height: 12px;
+  width: 12px;
+  border-radius: 6px;
+  margin-top: 4px;
+  margin-left: 12px;
+  margin-right: 4px;
+}
+
+.CSS {
+  background-color: #563D7C;
+}
+
+.HTML {
+  background-color: #D44826;
+}
+
+.JS {
+  background-color: #E9D958;
+}
+
+.RUBY {
+  background-color: #701516;
+}
+
+.circle {
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  border: 1px solid #414040;
+  background-color: #191A1C;
+}
