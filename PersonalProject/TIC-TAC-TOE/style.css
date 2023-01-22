@@ -1,0 +1,201 @@
+/**********************  MEDIA QUERIES  **********************/
+
+@font-face 
+{
+  font-family: Riffic;
+  src: url(assets/font/RifficFree-Bold.ttf);
+}
+
+/**************  MEDIA QUERIES - WIDTH < 300px  **************/
+
+@media (max-width: 300px) {
+
+	.content {
+		width: 95vw;
+		height: 98vh;
+	}
+
+	section {
+		width: 95vw;
+		height: 95vw;
+	}
+
+	header {
+		width: 95vw;
+		font-size: 14vw;
+	}
+	
+	#newGame, #computerMode, #playersMode {
+		width: 95vw;
+		font-size: 10vw;
+	}
+
+	button {
+		font-size: 24vw;
+	}
+
+	.topText {
+		font-size: 13vw;
+		margin-top: -15vw;
+		height: 30vw;
+		border-bottom: 0.1vh solid transparent;
+	}
+	
+	.bottomText {
+		font-size: 13vw;
+		margin-top: -7.5vw;
+		height: 24vw;
+		border-bottom: 0.1vh solid transparent;
+	}
+
+	.choices {
+		width: 97vw;
+		height: 35vw;
+		margin-top: 7vw;
+	}
+
+	.Scores {
+		font-size: 8vw;
+		margin-top: 12vw;
+	}
+}
+
+/**************  MEDIA QUERIES - WIDTH > 300px  **************/
+
+@media (min-width: 301px) {
+
+	.content {
+		width: 30vh;
+		height: 98vh;
+	}
+
+	section {
+		width: 30vh;
+		height: 30vh;
+	}
+
+	header {
+		width: 30vh;
+		font-size: 4vh;
+	}
+
+	#newGame, #computerMode, #playersMode {
+		width: 30vh;
+		font-size: 3.1vh;
+	}
+
+	button {
+		font-size: 7vh;
+	}
+
+	.topText {
+		font-size: 4vh;
+		margin-top: -3vh;
+		height: 10vh;
+		border-bottom: 0.1vh solid transparent;
+	}
+
+	.bottomText {
+		font-size: 4vh;
+		margin-top: -2.5vh;
+		height: 8vh;
+		border-bottom: 0.1vh solid transparent;
+	}
+
+	.choices {
+		width: 30vh;
+		margin-top: 2.5vh;
+	}
+
+	.Scores {
+		font-size: 2.5vh;
+		margin-top: 2vh;
+	}
+}
+
+/**********************  BODY  **********************/
+
+body {
+	display: flex;
+	justify-content: center;
+}
+
+/**********************  CONTENT  **********************/
+
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: Riffic;
+}
+
+/*********************  GAME TITLE  *********************/
+
+header {
+	background-color: antiquewhite;
+	text-align: center;
+	text-shadow: 0.5rem 0.5rem 0.3rem grey;
+	margin-top: 10%;
+	border: 0.15rem solid;
+	border-top-color : white;
+	border-left-color: white;
+	border-bottom-color: grey;
+	border-right-color: grey;
+	border-radius: 3vh;
+	margin-bottom: 1vh;
+}
+
+/*********************  SECTION  ************************/
+
+section {
+	display: flex;
+	flex-direction: row;
+  flex-wrap: wrap; 
+	align-content: center;
+	justify-content: center;
+  text-align: center;
+}
+
+/*********************  ALL BUTTONS  **********************/
+
+button {
+	font-family: Riffic;
+}
+
+/*******************  CHOICES BUTTONS  ********************/
+
+.choices {
+	display: flex;
+	flex-direction: column;
+}
+
+#newGame, #computerMode, #playersMode {
+	height: 5.2vh;
+	background-color: antiquewhite;
+	text-shadow: 0.15rem 0.15rem 0.3rem grey;
+	border-color: white;
+	white-space: nowrap;
+}
+
+#newGame {
+	border-radius: 3vh 3vh 0.15rem 0.15rem;
+}
+
+#playersMode {
+	border-radius: 0.15rem 0.15rem 3vh 3vh;
+}
+
+/**********************  CASES  ***********************/
+
+.case {  
+	width: 33%;
+	height: 33%;
+	border: 0.15rem solid black;
+	border-radius: 0.5rem;
+} 
+
+.Scores {
+	text-align: center;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-weight: bold;
+}
