@@ -7,8 +7,8 @@ let darkMode = false;
 const clickMode = () => {
   darkMode = !darkMode;
   const ban = darkMode ? "0" : "1";
-  imgBan.src = `assets/img/welcome-ban-${ban}.jpg`;
-  imgSlide.src = `assets/img/mode-${ban}.png`;
+  imgBan.src = `./assets/img/welcome-ban-${ban}.jpg`;
+  imgSlide.src = `./assets/img/mode-${ban}.png`;
   root.classList.toggle("dark-mode");
 }
 
