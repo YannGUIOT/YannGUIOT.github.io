@@ -26,7 +26,7 @@
   --line-color: #414040;
 }
 
-#github-logo, #folder-logo {
+#github-logo {
   filter: invert(var(--imgFilter));
 }
 
