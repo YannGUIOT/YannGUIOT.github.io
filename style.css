@@ -129,7 +129,6 @@ nav span {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  /* align-items: center; */
 }
 
 .welcomeBan {
@@ -175,7 +174,6 @@ nav span {
   color: var(--title-color);
   border: 1px solid var(--line-color);
   border-radius: 10px;
-
 }
 
 .descriptionLink {
@@ -190,7 +188,6 @@ nav span {
 .projectTitle {
   color: var(--project-title-color);
 }
-
 
 .languages {
   height: 14px;
