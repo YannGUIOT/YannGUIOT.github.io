@@ -1,12 +1,46 @@
+:root {
+  --background-color: white;
+  --text-color: #191A1C;
+  --link-text-color: rgb(71, 71, 71);
+  --name-color: rgb(53, 53, 53);
+  --contact-color: rgb(116, 94, 65);
+  --title-color: rgb(44, 44, 44);
+  --project-title-color: #0b61c4;
+  --imgFilter: 85%;
+  --slide-Dark-color: gray;
+  --slide-Light-color: whitesmoke;
+  --line-color: #d3d1d1;
+}
+
+.dark-mode {
+  --background-color: #191A1C;
+  --text-color: whitesmoke;
+  --link-text-color: rgb(211, 210, 210);
+  --name-color: darkgray;
+  --contact-color: rgb(160, 145, 124);
+  --title-color: rgb(215, 215, 215);
+  --project-title-color: #3f90ec;
+  --imgFilter: 0%;
+  --slide-Dark-color: whitesmoke;
+  --slide-Light-color: gray;
+  --line-color: #414040;
+}
+
+#github-logo, #folder-logo {
+  filter: invert(var(--imgFilter));
+}
+
 body {
+  background-color: var(--background-color);
+  color: var(--text-color);
   margin: 0;
-  background-color: #191A1C;
   font-family: 'Inter', sans-serif;
 }
 
 nav {
   background-color: #202529; 
   display: flex;
+  justify-content: space-between;
   align-items: center;
   height: 60px;
 }
@@ -22,12 +56,16 @@ nav li {
   float: left;
 }
 
+#toggle-mode {
+  margin-right: 32px;
+}
+
 nav a {
   padding-left: 32px;
 }
 
 a {
-  color: rgb(211, 210, 210);
+  color:  var(--link-text-color);
   text-decoration: none;
 }
 
@@ -37,13 +75,28 @@ nav span {
   font-size: 1.6em;
 }
 
+.slide-mode {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 32px;
+  font-size: small;
+}
+
+#dark {
+  color: var(--slide-Dark-color);
+}
+
+#light {
+  color: var(--slide-Light-color);
+}
+
 .photoProfil {
   margin-top: -50px;
   height: 296px;
   width: 296px;
   border-radius: 50%;
   border: 1px black;
-  background-color: rgb(36, 119, 190);
   overflow: hidden; /* empêche l'image de dépasser de la div */
 }
 
@@ -62,13 +115,13 @@ nav span {
 }
 
 .name {
-  color: darkgray;
+  color: var(--name-color);
   font-size: 1.3em;
-  border-bottom: 1px solid #414040;
+  border-bottom: 1px solid var(--line-color);
 }
 
 .contact {
-  color: rgb(160, 145, 124);
+  color: var(--contact-color);
   font-size: 0.9em;
 }
 
@@ -87,7 +140,7 @@ nav span {
 
 .emptyTopLineBottom {
   height: 8vh;
-  border-bottom: 1px solid #414040;
+  border-bottom: 1px solid var(--line-color);
 }
 
 .links {
@@ -111,7 +164,7 @@ nav span {
 
 .description {
   margin-left: 20px;
-  border-left: 1px solid #414040;
+  border-left: 1px solid var(--line-color);
 }
 
 .title {
@@ -119,8 +172,8 @@ nav span {
   align-items: center;
   width: 30em;
   height: 2.5em;
-  color: rgb(215, 218, 215);
-  border: 1px solid #414040;
+  color: var(--title-color);
+  border: 1px solid var(--line-color);
   border-radius: 10px;
 
 }
@@ -135,7 +188,7 @@ nav span {
 }
 
 .projectTitle {
-  color: #3f90ec;
+  color: var(--project-title-color);
 }
 
 
@@ -143,7 +196,7 @@ nav span {
   height: 14px;
   font-size: 0.75em;
   font-style: italic;
-  color: darkgray;
+  color: var(--name-color);
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -182,6 +235,6 @@ nav span {
   height: 20px;
   width: 20px;
   border-radius: 10px;
-  border: 1px solid #414040;
-  background-color: #191A1C;
+  border: 1px solid var(--line-color);
+  background-color: var(--background-color);
 }
