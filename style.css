@@ -3,7 +3,6 @@
   --text-color: #191A1C;
   --link-text-color: rgb(71, 71, 71);
   --name-color: rgb(53, 53, 53);
-  --contact-color: rgb(116, 94, 65);
   --title-color: rgb(44, 44, 44);
   --project-title-color: #0b61c4;
   --imgFilter: 85%;
@@ -17,7 +16,6 @@
   --text-color: whitesmoke;
   --link-text-color: rgb(211, 210, 210);
   --name-color: darkgray;
-  --contact-color: rgb(160, 145, 124);
   --title-color: rgb(215, 215, 215);
   --project-title-color: #3f90ec;
   --imgFilter: 0%;
@@ -26,7 +24,7 @@
   --line-color: #414040;
 }
 
-#github-logo {
+#github-logo, #mail-icon {
   filter: invert(var(--imgFilter));
 }
 
@@ -121,8 +119,12 @@ nav span {
 }
 
 .contact {
-  color: var(--contact-color);
-  font-size: 0.9em;
+  border-top: 1px solid var(--line-color);
+}
+
+.hidden-text {
+  font-size: 0.85em;
+  visibility: hidden;
 }
 
 .welcome {
