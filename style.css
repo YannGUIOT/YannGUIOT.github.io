@@ -9,6 +9,7 @@
   --slide-Dark-color: gray;
   --slide-Light-color: whitesmoke;
   --line-color: #d3d1d1;
+  --status-color: rgb(80, 80, 80);
 }
 
 .dark-mode {
@@ -22,6 +23,7 @@
   --slide-Dark-color: whitesmoke;
   --slide-Light-color: gray;
   --line-color: #414040;
+  --status-color: rgb(180, 180, 180);
 }
 
 #github-logo, #mail-icon {
@@ -129,7 +131,10 @@ nav span {
 
 .welcome {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 896px;
   gap: 15px;
 }
 
@@ -159,7 +164,7 @@ nav span {
   font-size: 1.2em;
 }
 
-.project, .projects {
+.project {
  margin-top: 15px;
 }
 
@@ -230,10 +235,45 @@ nav span {
   background-color: #701516;
 }
 
+.ONLINE {
+  background-color: rgb(3, 192, 3);
+}
+
 .circle {
   height: 20px;
   width: 20px;
   border-radius: 10px;
   border: 1px solid var(--line-color);
   background-color: var(--background-color);
+}
+
+#preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 30px;
+  width: 380px;
+  height: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+  visibility: hidden;
+  text-align: center;
+  color: var(--status-color);
+}
+
+#preview-text {
+  font-style: italic;
+  font-size: small;
+}
+
+#preview-img {
+  border-radius: 15px;
+}
+
+.status {
+  display: flex;
+  flex-direction: row;
+  width: 896px;
+  margin-top: 10px;
+  color: var(--status-color);
 }
