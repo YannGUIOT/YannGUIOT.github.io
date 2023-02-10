@@ -4,11 +4,13 @@ const racing = ["./assets/img/previews/racing.jpg","Teamwork - Organization of t
 const morpion = ["./assets/img/previews/morpion.jpg","Tic-Tac-Toe Game - following the MVC Model"];
 const code = ["./assets/img/previews/code.jpg","code snippet"];
 const minesweeper = ["./assets/img/previews/minesweeper.jpg","Minesweeper Game"];
+const github = ["./assets/img/previews/github.jpg","Project GitHub group page"];
 
 const root = document.documentElement;
 const imgSlide = document.getElementById("slide");
 const imgBan = document.getElementById("ban-img");
-const imgFolder = document.getElementById("folder-logo");
+const imgFolder1 = document.getElementById("folder-logo1");
+const imgFolder2 = document.getElementById("folder-logo2");
 const imgTel = document.getElementById("tel-icon");
 const imgMail = document.getElementById("mail-icon");
 const mailText = document.getElementsByClassName("mail hidden-text")[0];
@@ -26,7 +28,8 @@ const clickMode = () => {
   const ban = darkMode ? "0" : "1";
   imgBan.src = `./assets/img/welcome-${ban}.jpg`;
   imgSlide.src = `./assets/img/icons/mode-${ban}.png`;
-  imgFolder.src = `./assets/img/icons/folder-${ban}.png`;
+  imgFolder1.src = `./assets/img/icons/folder-${ban}.png`;
+  imgFolder2.src = `./assets/img/icons/folder-${ban}.png`;
   imgTel.src = `./assets/img/icons/smartphone-${ban}.png`;
   root.classList.toggle("dark-mode");
 }
@@ -60,7 +63,10 @@ linkMorpion.addEventListener('mouseout', function() {renderHidden(preview);});
 linkMinesweeper.addEventListener('mouseover', function() {previewDisplay(minesweeper);});
 linkMinesweeper.addEventListener('mouseout', function() {renderHidden(preview);});
 
-imgFolder.addEventListener('mouseover', function() {previewDisplay(code);});
-imgFolder.addEventListener('mouseout', function() {renderHidden(preview);});
+imgFolder1.addEventListener('mouseover', function() {previewDisplay(github);});
+imgFolder1.addEventListener('mouseout', function() {renderHidden(preview);});
+
+imgFolder2.addEventListener('mouseover', function() {previewDisplay(code);});
+imgFolder2.addEventListener('mouseout', function() {renderHidden(preview);});
 
 
