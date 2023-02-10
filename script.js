@@ -39,14 +39,10 @@ imgSlide.addEventListener("click",clickMode);
 const renderVisible = (e) => { e.style.visibility = 'visible';}
 const renderHidden = (e) => { e.style.visibility = 'hidden';}
 
-// Mail Adress Display 
-imgMail.addEventListener('mouseover', function() {renderVisible(mailText);});
-imgMail.addEventListener('mouseout', function() {renderHidden(mailText);});
-
-// Tel Number Display 
-imgTel.addEventListener('mouseover', function() {renderVisible(telText);});
-imgTel.addEventListener('mouseout', function() {renderHidden(telText);});
-
+const contactEventListeners = (element, text) => {
+  element.addEventListener('mouseover', function() {renderVisible(text);});
+  element.addEventListener('mouseout', function() {renderHidden(text);});
+}
 
 const previewDisplay = (x) => {
   previewImg.src = x[0];
@@ -54,19 +50,15 @@ const previewDisplay = (x) => {
   renderVisible(preview);
 }
 
-linkRacing.addEventListener('mouseover', function() {previewDisplay(racing);});
-linkRacing.addEventListener('mouseout', function() {renderHidden(preview);});
+const createEventListeners = (element, img) => {
+  element.addEventListener('mouseover', function() { previewDisplay(img); });
+  element.addEventListener('mouseout', function() { renderHidden(preview); });
+}
 
-linkMorpion.addEventListener('mouseover', function() {previewDisplay(morpion);});
-linkMorpion.addEventListener('mouseout', function() {renderHidden(preview);});
-
-linkMinesweeper.addEventListener('mouseover', function() {previewDisplay(minesweeper);});
-linkMinesweeper.addEventListener('mouseout', function() {renderHidden(preview);});
-
-imgFolder1.addEventListener('mouseover', function() {previewDisplay(github);});
-imgFolder1.addEventListener('mouseout', function() {renderHidden(preview);});
-
-imgFolder2.addEventListener('mouseover', function() {previewDisplay(code);});
-imgFolder2.addEventListener('mouseout', function() {renderHidden(preview);});
-
-
+contactEventListeners(imgMail, mailText);
+contactEventListeners(imgTel, telText);
+createEventListeners(linkRacing, racing);
+createEventListeners(linkMorpion, morpion);
+createEventListeners(linkMinesweeper, minesweeper);
+createEventListeners(imgFolder1, github);
+createEventListeners(imgFolder2, code);
