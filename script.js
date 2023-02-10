@@ -50,15 +50,15 @@ const previewDisplay = (x) => {
   renderVisible(preview);
 }
 
-const createEventListeners = (element, img) => {
+const linksEventListeners = (element, img) => {
   element.addEventListener('mouseover', function() { previewDisplay(img); });
   element.addEventListener('mouseout', function() { renderHidden(preview); });
 }
 
 contactEventListeners(imgMail, mailText);
 contactEventListeners(imgTel, telText);
-createEventListeners(linkRacing, racing);
-createEventListeners(linkMorpion, morpion);
-createEventListeners(linkMinesweeper, minesweeper);
-createEventListeners(imgFolder1, github);
-createEventListeners(imgFolder2, code);
+linksEventListeners(linkRacing, racing);
+linksEventListeners(linkMorpion, morpion);
+linksEventListeners(linkMinesweeper, minesweeper);
+linksEventListeners(imgFolder1, github);
+linksEventListeners(imgFolder2, code);
