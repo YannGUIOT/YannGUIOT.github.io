@@ -4,6 +4,7 @@ const racing = ["./assets/img/previews/racing.jpg","Teamwork - Organization of t
 const morpion = ["./assets/img/previews/morpion.jpg","Tic-Tac-Toe Game - following the MVC Model"];
 const code = ["./assets/img/previews/code.jpg","code snippet"];
 const minesweeper = ["./assets/img/previews/minesweeper.jpg","Minesweeper Game"];
+const kaagame = ["./assets/img/previews/kaagame.jpg","Personal Kaamelott Game"];
 const github = ["./assets/img/previews/github.jpg","Project GitHub group page"];
 
 const root = document.documentElement;
@@ -18,6 +19,7 @@ const telText = document.getElementsByClassName("tel hidden-text")[0];
 const linkRacing = document.getElementById("link-racing");
 const linkMorpion = document.getElementById("link-morpion");
 const linkMinesweeper = document.getElementById("link-minesweeper");
+const linkKaagame = document.getElementById("link-kaagame");
 const previewImg = document.getElementById("preview-img");
 const previewText = document.getElementById("preview-text");
 const preview = document.getElementById("preview");
@@ -60,5 +62,6 @@ contactEventListeners(imgTel, telText);
 linksEventListeners(linkRacing, racing);
 linksEventListeners(linkMorpion, morpion);
 linksEventListeners(linkMinesweeper, minesweeper);
+linksEventListeners(linkKaagame, kaagame);
 linksEventListeners(imgFolder1, github);
 linksEventListeners(imgFolder2, code);
