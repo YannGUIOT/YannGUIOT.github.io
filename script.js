@@ -5,18 +5,22 @@ const morpion = ["./assets/img/previews/morpion.jpg","Tic-Tac-Toe Game - followi
 const code = ["./assets/img/previews/code.jpg","code snippet"];
 const minesweeper = ["./assets/img/previews/minesweeper.jpg","Minesweeper Game"];
 const kaagame = ["./assets/img/previews/kaagame.jpg","Personal Kaamelott Game"];
-const github = ["./assets/img/previews/github.jpg","Project GitHub group page"];
+const github = ["./assets/img/previews/github.jpg","Project GitHub Group Page"];
+const githubTph = ["./assets/img/previews/github-tph.jpg","Web 3 Final Project GitHub Group Page"];
+const tph = ["./assets/img/previews/tph.jpg","Web 3 & NFT's Final Project"];
 
 const root = document.documentElement;
 const imgSlide = document.getElementById("slide");
 const imgBan = document.getElementById("ban-img");
 const imgFolder1 = document.getElementById("folder-logo1");
 const imgFolder2 = document.getElementById("folder-logo2");
+const imgFolder3 = document.getElementById("folder-logo3");
 const imgTel = document.getElementById("tel-icon");
 const imgMail = document.getElementById("mail-icon");
 const mailText = document.getElementsByClassName("mail hidden-text")[0];
 const telText = document.getElementsByClassName("tel hidden-text")[0];
 const linkRacing = document.getElementById("link-racing");
+const linkTph = document.getElementById("link-tph");
 const linkMorpion = document.getElementById("link-morpion");
 const linkMinesweeper = document.getElementById("link-minesweeper");
 const linkKaagame = document.getElementById("link-kaagame");
@@ -32,6 +36,7 @@ const clickMode = () => {
   imgSlide.src = `./assets/img/icons/mode-${ban}.png`;
   imgFolder1.src = `./assets/img/icons/folder-${ban}.png`;
   imgFolder2.src = `./assets/img/icons/folder-${ban}.png`;
+  imgFolder3.src = `./assets/img/icons/folder-${ban}.png`;
   imgTel.src = `./assets/img/icons/smartphone-${ban}.png`;
   root.classList.toggle("dark-mode");
 }
@@ -60,8 +65,10 @@ const linksEventListeners = (element, img) => {
 contactEventListeners(imgMail, mailText);
 contactEventListeners(imgTel, telText);
 linksEventListeners(linkRacing, racing);
+linksEventListeners(linkTph, tph);
 linksEventListeners(linkMorpion, morpion);
 linksEventListeners(linkMinesweeper, minesweeper);
 linksEventListeners(linkKaagame, kaagame);
 linksEventListeners(imgFolder1, github);
-linksEventListeners(imgFolder2, code);
+linksEventListeners(imgFolder2, githubTph);
+linksEventListeners(imgFolder3, code);
