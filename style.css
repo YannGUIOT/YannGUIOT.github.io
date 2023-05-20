@@ -104,6 +104,7 @@ nav span {
   margin-left: -50px;
 }
 
+
 .images {
   display: flex;
   flex-direction: row;
@@ -204,6 +205,11 @@ nav span {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+}
+
+.web3 {
+  color: var(--project-title-color);
+  font-size: 0.7em;
 }
 
 #POOMVC {
