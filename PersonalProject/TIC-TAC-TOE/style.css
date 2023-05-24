@@ -1,4 +1,4 @@
-/**************  MEDIA QUERIES - WIDTH < 300px  **************/
+/**************  MEDIA QUERIES - WIDTH > 300px  **************/
 
 @media (min-width: 301px) {
 	:root {
@@ -150,6 +150,8 @@ button {
 	border: 0.15rem solid black;
 	border-radius: 0.5rem;
 } 
+
+/**********************  OTHER  ***********************/
 
 .Scores {
 	text-align: center;
