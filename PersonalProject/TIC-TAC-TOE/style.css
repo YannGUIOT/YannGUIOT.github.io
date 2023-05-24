@@ -1,3 +1,45 @@
+/**************  MEDIA QUERIES - WIDTH < 300px  **************/
+
+@media (min-width: 301px) {
+	:root {
+		--change-30vh-to-95vw: 30vh;
+		--header-f-size: 4vh;
+		--multi-f-size: 3.1vh;
+		--button-f-size: 7vh;
+		--top-and-bottom-text-f-size : 4vh;
+		--topText-marg-top: -3vh;
+		--topText-h: 10vh;
+		--bottomText-marg-top: -2.5vh;
+		--bottomText-h: 8vh;
+		--choices-w: 30vh;
+		--choices-h: auto;
+		--choices-marg-top: 2.5vh;
+		--scores-f-size: 2.5vh;
+		--scores-marg-top: 2vh;
+	}
+}
+
+/**************  MEDIA QUERIES - WIDTH < 300px  **************/
+
+@media (max-width: 300px) {
+	:root {
+		--change-30vh-to-95vw: 95vw;
+		--header-f-size: 14vw;
+		--multi-f-size: 10vw;
+		--button-f-size: 24vw;
+		--top-and-bottom-text-f-size : 13vw;
+		--topText-marg-top: -5vw;
+		--topText-h: 30vw;
+		--bottomText-marg-top: -7.5vw;
+		--bottomText-h: 24vw;
+		--choices-w: 97vw;
+		--choices-h: 35vw;
+		--choices-marg-top: 7vw;
+		--scores-f-size: 8vw;
+		--scores-marg-top: 12vw;
+	}
+}
+
 /**********************  MEDIA QUERIES  **********************/
 
 @font-face 
@@ -6,111 +48,14 @@
   src: url(assets/font/RifficFree-Bold.ttf);
 }
 
-/**************  MEDIA QUERIES - WIDTH < 300px  **************/
-
-@media (max-width: 300px) {
-
-	.content {
-		width: 95vw;
-		height: 98vh;
-	}
-
-	section {
-		width: 95vw;
-		height: 95vw;
-	}
-
-	header {
-		width: 95vw;
-		font-size: 14vw;
-	}
-	
-	#newGame, #computerMode, #playersMode {
-		width: 95vw;
-		font-size: 10vw;
-	}
-
-	button {
-		font-size: 24vw;
-	}
-
-	.topText {
-		font-size: 13vw;
-		margin-top: -15vw;
-		height: 30vw;
-		border-bottom: 0.1vh solid transparent;
-	}
-	
-	.bottomText {
-		font-size: 13vw;
-		margin-top: -7.5vw;
-		height: 24vw;
-		border-bottom: 0.1vh solid transparent;
-	}
-
-	.choices {
-		width: 97vw;
-		height: 35vw;
-		margin-top: 7vw;
-	}
-
-	.Scores {
-		font-size: 8vw;
-		margin-top: 12vw;
-	}
+@font-face {
+	font-family: Astrolab;
+	src: url(assets/font/Astrolab.ttf);
 }
 
-/**************  MEDIA QUERIES - WIDTH > 300px  **************/
-
-@media (min-width: 301px) {
-
-	.content {
-		width: 30vh;
-		height: 98vh;
-	}
-
-	section {
-		width: 30vh;
-		height: 30vh;
-	}
-
-	header {
-		width: 30vh;
-		font-size: 4vh;
-	}
-
-	#newGame, #computerMode, #playersMode {
-		width: 30vh;
-		font-size: 3.1vh;
-	}
-
-	button {
-		font-size: 7vh;
-	}
-
-	.topText {
-		font-size: 4vh;
-		margin-top: -3vh;
-		height: 10vh;
-		border-bottom: 0.1vh solid transparent;
-	}
-
-	.bottomText {
-		font-size: 4vh;
-		margin-top: -2.5vh;
-		height: 8vh;
-		border-bottom: 0.1vh solid transparent;
-	}
-
-	.choices {
-		width: 30vh;
-		margin-top: 2.5vh;
-	}
-
-	.Scores {
-		font-size: 2.5vh;
-		margin-top: 2vh;
-	}
+@font-face {
+	font-family: Cube;
+	src: url(assets/font/G7_Cube_5.ttf);
 }
 
 /**********************  BODY  **********************/
@@ -123,6 +68,8 @@ body {
 /**********************  CONTENT  **********************/
 
 .content {
+	width: var(--change-30vh-to-95vw);
+	height: 98vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -143,6 +90,8 @@ header {
 	border-right-color: grey;
 	border-radius: 3vh;
 	margin-bottom: 1vh;
+	width: var(--change-30vh-to-95vw);
+	font-size: var(--header-f-size);
 }
 
 /*********************  SECTION  ************************/
@@ -154,12 +103,15 @@ section {
 	align-content: center;
 	justify-content: center;
   text-align: center;
+	width: var(--change-30vh-to-95vw);
+	height: var(--change-30vh-to-95vw);
 }
 
 /*********************  ALL BUTTONS  **********************/
 
 button {
 	font-family: Riffic;
+	font-size: var(--button-f-size);
 }
 
 /*******************  CHOICES BUTTONS  ********************/
@@ -167,6 +119,9 @@ button {
 .choices {
 	display: flex;
 	flex-direction: column;
+	width: var(--choices-w);
+	height: var(--choices-h);
+	margin-top: var(--choices-marg-top);
 }
 
 #newGame, #computerMode, #playersMode {
@@ -175,6 +130,8 @@ button {
 	text-shadow: 0.15rem 0.15rem 0.3rem grey;
 	border-color: white;
 	white-space: nowrap;
+	width: var(--change-30vh-to-95vw);
+	font-size: var(--multi-f-size);
 }
 
 #newGame {
@@ -196,6 +153,29 @@ button {
 
 .Scores {
 	text-align: center;
-	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-family: Cube;
 	font-weight: bold;
+	font-size: var(--scores-f-size);
+	margin-top: var(--scores-marg-top);
+}
+
+.topText {
+	font-size: 4vh;
+	margin-top: -3vh;
+	height: 10vh;
+	border-bottom: 0.1vh solid transparent;
+}
+
+.bottomText {
+	font-size: 4vh;
+	margin-top: -2.5vh;
+	height: 8vh;
+	border-bottom: 0.1vh solid transparent;
+}
+
+.copyright {
+	text-align: center;
+	font-family: Astrolab;
+	font-size: 0.4em;
+	color: rgb(20, 20, 20);
 }
