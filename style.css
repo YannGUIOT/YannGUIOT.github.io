@@ -3,13 +3,14 @@
   --text-color: #191A1C;
   --link-text-color: rgb(71, 71, 71);
   --name-color: rgb(53, 53, 53);
-  --title-color: rgb(44, 44, 44);
+  --title-color: rgb(102, 63, 63);
   --project-title-color: #0b61c4;
   --imgFilter: 85%;
   --slide-Dark-color: gray;
   --slide-Light-color: whitesmoke;
   --line-color: #d3d1d1;
   --status-color: rgb(80, 80, 80);
+  --title-bck-grd-color: #fafafa;
 }
 
 .dark-mode {
@@ -24,6 +25,7 @@
   --slide-Light-color: gray;
   --line-color: #414040;
   --status-color: rgb(180, 180, 180);
+  --title-bck-grd-color: #222325;
 }
 
 #github-logo, #mail-icon {
@@ -122,11 +124,11 @@ nav span {
 
 .contact {
   border-top: 1px solid var(--line-color);
+  font-size: 0.85em;
 }
 
-.hidden-text {
-  font-size: 0.85em;
-  visibility: hidden;
+.mail {
+  margin-top: 8px;
 }
 
 .welcome {
@@ -181,6 +183,7 @@ nav span {
   color: var(--title-color);
   border: 1px solid var(--line-color);
   border-radius: 10px;
+  background-color: var(--title-bck-grd-color);
 }
 
 .descriptionLink {
@@ -244,11 +247,12 @@ nav span {
 }
 
 .circle {
-  height: 20px;
-  width: 20px;
-  border-radius: 10px;
+  height: 16px;
+  width: 16px;
+  border-radius: 9px;
   border: 1px solid var(--line-color);
   background-color: var(--background-color);
+  margin-left: 2px;
 }
 
 #preview {

@@ -17,8 +17,6 @@ const imgFolder2 = document.getElementById("folder-logo2");
 const imgFolder3 = document.getElementById("folder-logo3");
 const imgTel = document.getElementById("tel-icon");
 const imgMail = document.getElementById("mail-icon");
-const mailText = document.getElementsByClassName("mail hidden-text")[0];
-const telText = document.getElementsByClassName("tel hidden-text")[0];
 const linkRacing = document.getElementById("link-racing");
 const linkTph = document.getElementById("link-tph");
 const linkMorpion = document.getElementById("link-morpion");
@@ -42,14 +40,8 @@ const clickMode = () => {
 }
 imgSlide.addEventListener("click",clickMode);
 
-
 const renderVisible = (e) => { e.style.visibility = 'visible';}
 const renderHidden = (e) => { e.style.visibility = 'hidden';}
-
-const contactEventListeners = (element, text) => {
-  element.addEventListener('mouseover', function() {renderVisible(text);});
-  element.addEventListener('mouseout', function() {renderHidden(text);});
-}
 
 const previewDisplay = (x) => {
   previewImg.src = x[0];
@@ -62,8 +54,6 @@ const linksEventListeners = (element, img) => {
   element.addEventListener('mouseout', function() { renderHidden(preview); });
 }
 
-contactEventListeners(imgMail, mailText);
-contactEventListeners(imgTel, telText);
 linksEventListeners(linkRacing, racing);
 linksEventListeners(linkTph, tph);
 linksEventListeners(linkMorpion, morpion);
