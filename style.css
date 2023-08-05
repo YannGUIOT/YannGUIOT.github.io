@@ -242,6 +242,14 @@ nav span {
   background-color: #aa894c;
 }
 
+.ANGULAR {
+  background-color: #bb0003;
+}
+
+.TYPESCRIPT {
+  background-color: #3863da;
+}
+
 .ONLINE {
   background-color: rgb(3, 192, 3);
 }
