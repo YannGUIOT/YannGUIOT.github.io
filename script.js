@@ -13,7 +13,6 @@ const github_racing = ["./assets/img/previews/github-racing.jpg","Project GitHub
 const github_tph = ["./assets/img/previews/github-tph.jpg","Web 3 Final Project GitHub Group Page"];
 const github_morpion = ["./assets/img/previews/github-morpion.jpg","code snippet"];
 
-
 const root = document.documentElement;
 const imgSlide = document.getElementById("slide");
 const imgBan = document.getElementById("ban-img");
