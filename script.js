@@ -2,16 +2,17 @@ let darkMode = false;
 
 const racing = ["./assets/img/previews/racing.jpg","Teamwork - Organization of tasks, Drafting of specifications, signs of graphic models, class diagram and data models, Realization of an authentication system with tokens, API Management - Payments (Stripe), API Management - Sending Automated Emails, Admin panel ..."];
 const morpion = ["./assets/img/previews/morpion.jpg","Tic-Tac-Toe Game - following the MVC Model"];
-const code = ["./assets/img/previews/code.jpg","code snippet"];
+const tph = ["./assets/img/previews/tph.jpg","Web 3 & NFT's Final Project"];
 const minesweeper = ["./assets/img/previews/minesweeper.jpg","Minesweeper Game"];
 const kaagame = ["./assets/img/previews/kaagame.jpg","Personal Kaamelott Game"];
 const boutique = ["./assets/img/previews/boutique.jpg","Personal Online Store Example, with React JS & Supabase."];
 const velib = ["./assets/img/previews/velib.jpg","API Example of Velib disponibility on Île-de-France, with React JS"];
 const pokemon = ["./assets/img/previews/pokemon.jpg","Pokemon App Exercice with Angular"];
 const github_pokemon = ["./assets/img/previews/github-pokemon.jpg","POO with Angular & TypeScript"];
-const github = ["./assets/img/previews/github.jpg","Project GitHub Group Page"];
-const githubTph = ["./assets/img/previews/github-tph.jpg","Web 3 Final Project GitHub Group Page"];
-const tph = ["./assets/img/previews/tph.jpg","Web 3 & NFT's Final Project"];
+const github_racing = ["./assets/img/previews/github-racing.jpg","Project GitHub Group Page"];
+const github_tph = ["./assets/img/previews/github-tph.jpg","Web 3 Final Project GitHub Group Page"];
+const github_morpion = ["./assets/img/previews/github-morpion.jpg","code snippet"];
+
 
 const root = document.documentElement;
 const imgSlide = document.getElementById("slide");
@@ -71,7 +72,7 @@ linksEventListeners(linkKaagame, kaagame);
 linksEventListeners(linkBoutique, boutique);
 linksEventListeners(linkVelib, velib);
 linksEventListeners(linkPokemon, pokemon);
-linksEventListeners(imgFolder1, github);
-linksEventListeners(imgFolder2, githubTph);
-linksEventListeners(imgFolder3, code);
+linksEventListeners(imgFolder1, github_racing);
+linksEventListeners(imgFolder2, github_tph);
+linksEventListeners(imgFolder3, github_morpion);
 linksEventListeners(imgFolder4, github_pokemon);
