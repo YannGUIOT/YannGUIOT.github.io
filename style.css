@@ -6,11 +6,13 @@
   --title-color: rgb(102, 63, 63);
   --project-title-color: #0b61c4;
   --imgFilter: 85%;
+  --imgFilter2: 0%;
   --slide-Dark-color: gray;
   --slide-Light-color: whitesmoke;
   --line-color: #d3d1d1;
   --status-color: rgb(80, 80, 80);
   --title-bck-grd-color: #fafafa;
+  --popup-box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 .dark-mode {
@@ -21,11 +23,13 @@
   --title-color: rgb(215, 215, 215);
   --project-title-color: #3f90ec;
   --imgFilter: 0%;
+  --imgFilter2: 85%;
   --slide-Dark-color: whitesmoke;
   --slide-Light-color: gray;
   --line-color: #414040;
   --status-color: rgb(180, 180, 180);
   --title-bck-grd-color: #222325;
+  --popup-box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
 }
 
 #github-logo, #mail-icon {
@@ -36,6 +40,75 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   margin: 0;
+  font-family: 'Inter', sans-serif;
+  position: relative; 
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 480px;
+  width: 90%;
+  background: var(--background-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--popup-box-shadow);
+  transition: 0.3s transform;
+  transform: translate(-50%, -50%) scale(0.1);
+  display: none;
+}
+
+.popup.show {
+  transform: translate(-50%, -50%) scale(1);
+  display: block;
+}
+
+.popup-content {
+  max-height: 80vh;
+  overflow: auto;
+  margin-left: 1em;
+}
+
+.popup-content p {
+ font-weight: bold;
+}
+
+.popup-content span {
+  margin-left: 1em;
+  color: #808080;
+}
+
+.details {
+  margin-top: 0.3em;
+  margin-bottom: 1.2em;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.close-button img {
+  width: 1.5rem;
+  height: 1.5rem;
+  filter: invert(var(--imgFilter2));
+}
+
+button {
+  cursor: pointer;
+  width: 2.4em;
+  height: 2.4em;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--background-color);
+  color: var(--text-color);
   font-family: 'Inter', sans-serif;
 }
 

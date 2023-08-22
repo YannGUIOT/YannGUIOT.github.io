@@ -82,3 +82,67 @@ linksEventListeners(imgFolder2, github_tph);
 linksEventListeners(imgFolder3, github_morpion);
 linksEventListeners(imgFolder4, github_pokemon);
 linksEventListeners(imgFolder5, github_visitcard);
+
+
+//***** CV *****// 
+
+// Élément popup 
+const popup = document.createElement('div');
+popup.classList.add('popup');
+
+// Contenu
+popup.innerHTML = `
+  <div class="popup-content">
+
+    <div class="close-button">
+      <img 
+        src="./assets/img/icons/close.svg"
+        class="close-icon"
+        onclick="closePopUpCV()"
+      >
+    </div>
+
+    <p>Location:</p>
+    <ul>
+      <li>France</li> 
+      <li><a href="https://www.google.fr/maps/place/Perpignan/@42.666332,2.7840618,11z/data=!4m6!3m5!1s0x12b06e4e80fd88fd:0x1c83306520f2dd4f!8m2!3d42.6886591!4d2.8948332!16zL20vMDlua3E?entry=ttu" target="_blank">Perpignan (66)</a></li>
+    </ul>
+    <span>&nbsp;</span>
+    <p>Programming Formations:</p>
+    <ul>
+      <li><a href="https://www.thehackingproject.org/" target="_blank">The Hacking Project (sept 2022 - mai 2023)</a></li>
+      <div class="details">
+        <span><i>Peer learning Bootcamp</i></span><br />
+        <span><i>Titre RNCP 34779 Développeur Web (Niv Bac+2)</i></span><br />
+      </div>
+      <li>BTS informatique industriel (2000 - 2002)</li>
+    </ul>
+    <span>&nbsp;</span>
+    <p>Skills:</p>
+    <ul>
+      <li>React Js, Node.js, Angular</li>
+      <li>Svelte, SvelteKit</li>
+      <li>HTML, CSS, Sass, Bootstrap</li>
+      <li>Javascript ES6, PHP, TypeScript</li>
+      <li>Python, Ruby, Ruby On Rails</li>
+      <li>PostgreSQL, Supabase</li>
+      <li>Git, GitHub, VS Code</li>
+    </ul>
+  </div>
+`;
+
+document.body.appendChild(popup);
+
+// Ouverture au click
+const openPopUpCV = () => {
+  popup.classList.add('show');
+};
+
+const closePopUpCV = () => {
+  popup.classList.remove('show'); 
+};
+
+// Empêcher fermeture au clic intérieur
+popup.querySelector('.popup-content').addEventListener('click', e => {
+  e.stopPropagation();
+});
