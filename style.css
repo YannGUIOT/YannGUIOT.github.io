@@ -83,6 +83,7 @@ body {
 .details {
   margin-top: 0.3em;
   margin-bottom: 1.2em;
+  font-size: small;
 }
 
 .close-button {
