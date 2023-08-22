@@ -112,6 +112,7 @@ popup.innerHTML = `
     <ul>
       <li><a href="https://www.thehackingproject.org/" target="_blank">The Hacking Project (sept 2022 - mai 2023)</a></li>
       <div class="details">
+        <span><i>Formation Dev++</i></span><br />
         <span><i>Peer learning Bootcamp</i></span><br />
         <span><i>Titre RNCP 34779 Développeur Web (Niv Bac+2)</i></span><br />
       </div>
