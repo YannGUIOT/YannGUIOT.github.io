@@ -123,10 +123,10 @@ popup.innerHTML = `
     <h3>Skills</h3>
     <ul>
       <li>React Js, Node.js, Angular</li>
-      <li>Svelte, SvelteKit, Ruby On Rails </li>
+      <li>Svelte, SvelteKit, Ruby On Rails</li>
       <li>HTML, CSS, Sass, Bootstrap</li>
       <li>Javascript ES6, TypeScript</li>
-      <li>Python, Ruby, PHP </li>
+      <li>Python, Ruby, PHP</li>
       <li>PostgreSQL, MySQL, Supabase</li>
       <li>Git, GitHub, WSL, VS Code</li>
     </ul>
