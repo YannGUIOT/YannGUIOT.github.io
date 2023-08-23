@@ -80,6 +80,10 @@ body {
   color: #808080;
 }
 
+.popup-content h3 {
+  height: 2em;
+}
+
 .separate {
   width: 30em;
   height: 1.5em;
