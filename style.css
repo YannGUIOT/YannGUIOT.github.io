@@ -12,7 +12,7 @@
   --line-color: #d3d1d1;
   --status-color: rgb(80, 80, 80);
   --title-bck-grd-color: #fafafa;
-  --popup-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  --popup-box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
 .dark-mode {
@@ -29,7 +29,7 @@
   --line-color: #414040;
   --status-color: rgb(180, 180, 180);
   --title-bck-grd-color: #222325;
-  --popup-box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  --popup-box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
 }
 
 #github-logo, #mail-icon {
