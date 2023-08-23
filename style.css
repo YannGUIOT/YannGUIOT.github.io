@@ -49,7 +49,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 480px;
+  max-width: 32em;
   width: 90%;
   background: var(--background-color);
   padding: 1rem;
@@ -78,6 +78,17 @@ body {
 .popup-content span {
   margin-left: 1em;
   color: #808080;
+}
+
+.popup-content h3 {
+  text-decoration: dashed;
+}
+
+.popup-content .separate {
+  width: 28em;
+  height: 0.5em;
+  border-top: 1px solid #808080;
+  margin-top: 2em;
 }
 
 .details {

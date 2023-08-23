@@ -106,7 +106,7 @@ popup.innerHTML = `
     <ul>
       <li><a href="https://www.google.fr/maps/place/Perpignan/@42.666332,2.7840618,11z/data=!4m6!3m5!1s0x12b06e4e80fd88fd:0x1c83306520f2dd4f!8m2!3d42.6886591!4d2.8948332!16zL20vMDlua3E?entry=ttu" target="_blank">France | Occitanie | Perpignan (66)</a></li> 
     </ul>
-    <span>&nbsp;</span>
+    <div class="separate"></div>
     <h3>Programming Formations:</h3>
     <ul>
       <li><a href="https://www.thehackingproject.org/" target="_blank"><strong>The Hacking Project [ Sept 2022 - Mai 2023 ]</strong></a></li>
@@ -117,7 +117,7 @@ popup.innerHTML = `
       </div>
       <li>BTS informatique industriel [ Sept 2000 - Juin 2002 ]</li>
     </ul>
-    <span>&nbsp;</span>
+    <div class="separate"></div>
     <h3>Skills:</h3>
     <ul>
       <li>React Js, Node.js, Angular</li>
