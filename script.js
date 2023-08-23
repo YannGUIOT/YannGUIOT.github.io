@@ -86,11 +86,9 @@ linksEventListeners(imgFolder5, github_visitcard);
 
 //***** CV *****// 
 
-// Élément popup 
 const popup = document.createElement('div');
 popup.classList.add('popup');
 
-// Contenu
 popup.innerHTML = `
   <div class="popup-content">
 
@@ -137,7 +135,6 @@ popup.innerHTML = `
 
 document.body.appendChild(popup);
 
-// Ouverture au click
 const openPopUpCV = () => {
   popup.classList.add('show');
 };
@@ -146,7 +143,6 @@ const closePopUpCV = () => {
   popup.classList.remove('show'); 
 };
 
-// Empêcher fermeture au clic intérieur
 popup.querySelector('.popup-content').addEventListener('click', e => {
   e.stopPropagation();
 });
