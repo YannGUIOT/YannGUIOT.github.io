@@ -108,7 +108,7 @@ popup.innerHTML = `
     <div class="formations">
       <h3>Formations</h3>
       <div class="line">
-        <li></li><a href="https://www.thehackingproject.org/" target="_blank"><strong>The Hacking Project [ Sept 2022 - Mai 2023 ]</strong></a>
+        <li></li>[ Sept 2022 - Mai 2023 ] <a href="https://www.thehackingproject.org/" target="_blank"><strong>The Hacking Project</strong></a>
       </div>
       <div class="details">
         <span><i>Formation Dev++</i></span><br />
