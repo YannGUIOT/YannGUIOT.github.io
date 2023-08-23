@@ -80,21 +80,29 @@ body {
   color: #808080;
 }
 
-.popup-content h3 {
-  text-decoration: dashed;
-}
-
-.popup-content .separate {
-  width: 28em;
+.separate {
+  width: 30em;
   height: 0.5em;
   border-top: 1px solid #808080;
   margin-top: 2em;
+}
+
+.line {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.5em;
+}
+
+.formations {
+  padding-right: 1em;
+  text-align: end;
 }
 
 .details {
   margin-top: 0.3em;
   margin-bottom: 1.2em;
   font-size: small;
+  padding-right: 2.5em;
 }
 
 .close-button {

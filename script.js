@@ -102,23 +102,27 @@ popup.innerHTML = `
       >
     </div>
 
-    <h3>Location:</h3>
+    <h3>Location</h3>
     <ul>
       <li><a href="https://www.google.fr/maps/place/Perpignan/@42.666332,2.7840618,11z/data=!4m6!3m5!1s0x12b06e4e80fd88fd:0x1c83306520f2dd4f!8m2!3d42.6886591!4d2.8948332!16zL20vMDlua3E?entry=ttu" target="_blank">France | Occitanie | Perpignan (66)</a></li> 
     </ul>
     <div class="separate"></div>
-    <h3>Programming Formations:</h3>
-    <ul>
-      <li><a href="https://www.thehackingproject.org/" target="_blank"><strong>The Hacking Project [ Sept 2022 - Mai 2023 ]</strong></a></li>
+    <div class="formations">
+      <h3>Formations</h3>
+      <div class="line">
+        <li></li><a href="https://www.thehackingproject.org/" target="_blank"><strong>The Hacking Project [ Sept 2022 - Mai 2023 ]</strong></a>
+      </div>
       <div class="details">
         <span><i>Formation Dev++</i></span><br />
         <span><i>Peer Learning Bootcamp</i></span><br />
         <span><i>Titre RNCP 34779 Développeur Web (Niv Bac+2)</i></span><br />
       </div>
-      <li>BTS informatique industriel [ Sept 2000 - Juin 2002 ]</li>
-    </ul>
+      <div class="line">
+        <li></li>BTS informatique industriel [ Sept 2000 - Juin 2002 ]
+      </div>
+    </div>
     <div class="separate"></div>
-    <h3>Skills:</h3>
+    <h3>Skills</h3>
     <ul>
       <li>React Js, Node.js, Angular</li>
       <li>Svelte, SvelteKit, Ruby On Rails </li>
