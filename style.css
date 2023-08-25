@@ -196,7 +196,7 @@ nav span {
   width: 296px;
   border-radius: 50%;
   border: 1px black;
-  overflow: hidden; /* empêche l'image de dépasser de la div */
+  overflow: hidden;
 }
 
 #photo {
@@ -240,7 +240,7 @@ nav span {
 .welcomeBan {
   width: 896px;
   height: 176px;
-  overflow: hidden; /* empêche l'image de dépasser de la div */
+  overflow: hidden;
 }
 
 .emptyTopLineBottom {
