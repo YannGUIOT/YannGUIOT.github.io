@@ -73,22 +73,45 @@ const linksEventListeners = (element, img) => {
   element.addEventListener('mouseout', function() { renderHidden(preview); });
 }
 
-linksEventListeners(linkRacing, racing);
-linksEventListeners(linkTph, tph);
-linksEventListeners(linkMorpion, morpion);
-linksEventListeners(linkMinesweeper, minesweeper);
-linksEventListeners(linkKaagame, kaagame);
-linksEventListeners(linkBoutique, boutique);
-linksEventListeners(linkVelib, velib);
-linksEventListeners(linkPokemon, pokemon);
-linksEventListeners(linkVisitcard, visitcard);
-linksEventListeners(linkBuddha, buddha);
-linksEventListeners(imgFolder1, github_racing);
-linksEventListeners(imgFolder2, github_tph);
-linksEventListeners(imgFolder3, github_morpion);
-linksEventListeners(imgFolder4, github_pokemon);
-linksEventListeners(imgFolder5, github_visitcard);
-linksEventListeners(imgFolder6, github_buddha);
+const linksData = [
+  { link: linkRacing, target: racing },
+  { link: linkTph, target: tph },
+  { link: linkMorpion, target: morpion },
+  { link: linkMinesweeper, target: minesweeper },
+  { link: linkKaagame, target: kaagame },
+  { link: linkBoutique, target: boutique },
+  { link: linkVelib, target: velib },
+  { link: linkPokemon, target: pokemon },
+  { link: linkVisitcard, target: visitcard },
+  { link: linkBuddha, target: buddha },
+  { link: imgFolder1, target: github_racing },
+  { link: imgFolder2, target: github_tph },
+  { link: imgFolder3, target: github_morpion },
+  { link: imgFolder4, target: github_pokemon },
+  { link: imgFolder5, target: github_visitcard },
+  { link: imgFolder6, target: github_buddha }
+];
+
+linksData.forEach(({ link, target }) => {
+  linksEventListeners(link, target);
+});
+
+// linksEventListeners(linkRacing, racing);
+// linksEventListeners(linkTph, tph);
+// linksEventListeners(linkMorpion, morpion);
+// linksEventListeners(linkMinesweeper, minesweeper);
+// linksEventListeners(linkKaagame, kaagame);
+// linksEventListeners(linkBoutique, boutique);
+// linksEventListeners(linkVelib, velib);
+// linksEventListeners(linkPokemon, pokemon);
+// linksEventListeners(linkVisitcard, visitcard);
+// linksEventListeners(linkBuddha, buddha);
+// linksEventListeners(imgFolder1, github_racing);
+// linksEventListeners(imgFolder2, github_tph);
+// linksEventListeners(imgFolder3, github_morpion);
+// linksEventListeners(imgFolder4, github_pokemon);
+// linksEventListeners(imgFolder5, github_visitcard);
+// linksEventListeners(imgFolder6, github_buddha);
 
 
 //***** CV *****// 
