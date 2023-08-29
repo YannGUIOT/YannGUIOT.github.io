@@ -96,24 +96,6 @@ linksData.forEach(({ link, target }) => {
   linksEventListeners(link, target);
 });
 
-// linksEventListeners(linkRacing, racing);
-// linksEventListeners(linkTph, tph);
-// linksEventListeners(linkMorpion, morpion);
-// linksEventListeners(linkMinesweeper, minesweeper);
-// linksEventListeners(linkKaagame, kaagame);
-// linksEventListeners(linkBoutique, boutique);
-// linksEventListeners(linkVelib, velib);
-// linksEventListeners(linkPokemon, pokemon);
-// linksEventListeners(linkVisitcard, visitcard);
-// linksEventListeners(linkBuddha, buddha);
-// linksEventListeners(imgFolder1, github_racing);
-// linksEventListeners(imgFolder2, github_tph);
-// linksEventListeners(imgFolder3, github_morpion);
-// linksEventListeners(imgFolder4, github_pokemon);
-// linksEventListeners(imgFolder5, github_visitcard);
-// linksEventListeners(imgFolder6, github_buddha);
-
-
 //***** CV *****// 
 
 const popup = document.createElement('div');
