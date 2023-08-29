@@ -9,11 +9,13 @@ const boutique = ["./assets/img/previews/boutique.jpg","Personal Online Store Ex
 const velib = ["./assets/img/previews/velib.jpg","API Example of Velib disponibility on Île-de-France, with React JS"];
 const pokemon = ["./assets/img/previews/pokemon.jpg","Pokemon App Exercice with Angular"];
 const visitcard = ["./assets/img/previews/visitcard.jpg","Exercice in POO with React JS, to create your visit card, responsive with Grid & Flex CSS display"];
+const buddha = ["./assets/img/previews/buddha.jpg","Quiz in Javascript using jQuery"];
 const github_pokemon = ["./assets/img/previews/github-pokemon.jpg","POO with Angular & TypeScript"];
 const github_racing = ["./assets/img/previews/github-racing.jpg","Project GitHub Group Page"];
 const github_tph = ["./assets/img/previews/github-tph.jpg","Web 3 Final Project GitHub Group Page"];
 const github_morpion = ["./assets/img/previews/github-morpion.jpg","code snippet"];
 const github_visitcard = ["./assets/img/previews/github-visitcard.jpg","POO with React JS"];
+const github_buddha = ["./assets/img/previews/github-buddha.jpg","using jQuery"];
 
 const root = document.documentElement;
 const imgSlide = document.getElementById("slide");
@@ -23,6 +25,7 @@ const imgFolder2 = document.getElementById("folder-logo2");
 const imgFolder3 = document.getElementById("folder-logo3");
 const imgFolder4 = document.getElementById("folder-logo4");
 const imgFolder5 = document.getElementById("folder-logo5");
+const imgFolder6 = document.getElementById("folder-logo6");
 const imgTel = document.getElementById("tel-icon");
 const imgMail = document.getElementById("mail-icon");
 const linkRacing = document.getElementById("link-racing");
@@ -34,6 +37,7 @@ const linkBoutique = document.getElementById("link-boutique");
 const linkVelib = document.getElementById("link-velib");
 const linkPokemon = document.getElementById("link-pokemon");
 const linkVisitcard = document.getElementById("link-visitcard");
+const linkBuddha = document.getElementById("link-buddha");
 const previewImg = document.getElementById("preview-img");
 const previewText = document.getElementById("preview-text");
 const preview = document.getElementById("preview");
@@ -49,6 +53,7 @@ const clickMode = () => {
   imgFolder3.src = `./assets/img/icons/folder-${ban}.png`;
   imgFolder4.src = `./assets/img/icons/folder-${ban}.png`;
   imgFolder5.src = `./assets/img/icons/folder-${ban}.png`;
+  imgFolder6.src = `./assets/img/icons/folder-${ban}.png`;
   imgTel.src = `./assets/img/icons/smartphone-${ban}.png`;
   root.classList.toggle("dark-mode");
 }
@@ -77,11 +82,13 @@ linksEventListeners(linkBoutique, boutique);
 linksEventListeners(linkVelib, velib);
 linksEventListeners(linkPokemon, pokemon);
 linksEventListeners(linkVisitcard, visitcard);
+linksEventListeners(linkBuddha, buddha);
 linksEventListeners(imgFolder1, github_racing);
 linksEventListeners(imgFolder2, github_tph);
 linksEventListeners(imgFolder3, github_morpion);
 linksEventListeners(imgFolder4, github_pokemon);
 linksEventListeners(imgFolder5, github_visitcard);
+linksEventListeners(imgFolder6, github_buddha);
 
 
 //***** CV *****// 
