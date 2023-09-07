@@ -396,9 +396,12 @@ nav span {
 }
 
 .popup-content a {
-  color: rgb(25, 150, 25);
+  color: rgb(0, 155, 0);
 }
 
+.popup-content i {
+  color: rgb(70, 140, 70);
+}
 
 /* .web3 {
   color: var(--project-title-color);

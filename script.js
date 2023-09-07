@@ -137,13 +137,13 @@ popup.innerHTML = `
     <div class="separate"></div>
     <h3>Skills</h3>
     <ul>
-      <li>React Js, Node.js, Angular</li>
-      <li>Svelte, SvelteKit, Ruby On Rails</li>
-      <li>HTML, CSS, Sass, Bootstrap</li>
-      <li>Javascript ES6, TypeScript</li>
-      <li>Python, Ruby, PHP</li>
-      <li>PostgreSQL, MySQL, Supabase</li>
-      <li>Git, GitHub, WSL, VS Code</li>
+      <li><i>React Js, Node.js, Angular</i></li>
+      <li><i>Svelte, SvelteKit, Ruby On Rails</i></li>
+      <li><i>HTML, CSS, Sass, Bootstrap</i></li>
+      <li><i>Javascript ES6, TypeScript</i></li>
+      <li><i>Python, Ruby, PHP</i></li>
+      <li><i>PostgreSQL, MySQL, Supabase</i></li>
+      <li><i>Git, GitHub, WSL, VS Code</i></li>
     </ul>
   </div>
 `;
