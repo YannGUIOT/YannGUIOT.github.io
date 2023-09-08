@@ -144,6 +144,8 @@ popup.innerHTML = `
       <li><i>Python, Ruby, PHP</i></li>
       <li><i>PostgreSQL, MySQL, Supabase</i></li>
       <li><i>Git, GitHub, WSL, VS Code</i></li>
+      </br>
+      <li><i>Photoshop, Adobe XD</i></li>
     </ul>
   </div>
 `;
