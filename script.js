@@ -112,13 +112,13 @@ popup.innerHTML = `
       >
     </div>
 
-    <h3>Location</h3>
+    <h2>Location</h2>
     <ul>
       <li><a href="https://www.google.fr/maps/place/Perpignan/@42.666332,2.7840618,11z/data=!4m6!3m5!1s0x12b06e4e80fd88fd:0x1c83306520f2dd4f!8m2!3d42.6886591!4d2.8948332!16zL20vMDlua3E?entry=ttu" target="_blank">France | Occitanie | Perpignan (66)</a></li> 
     </ul>
     <div class="separate"></div>
     <div class="formations">
-      <h3>Formations</h3>
+      <h2>Formations</h2>
       <div class="line">
         <li></li>[ Sept 2022 - Mai 2023 ] <a href="https://www.thehackingproject.org/" target="_blank"><strong>The Hacking Project</strong></a>
       </div>
@@ -135,7 +135,7 @@ popup.innerHTML = `
       </div>
     </div>
     <div class="separate"></div>
-    <h3>Skills</h3>
+    <h2>Skills</h2>
     <ul>
       <li><i>React Js, Node.js, Angular</i></li>
       <li><i>Svelte, SvelteKit, Ruby On Rails</i></li>

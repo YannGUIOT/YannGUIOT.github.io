@@ -80,7 +80,7 @@ body {
   color: #808080;
 }
 
-.popup-content h3 {
+.popup-content h2 {
   height: 2em;
 }
 
@@ -391,7 +391,7 @@ nav span {
   color: var(--status-color);
 }
 
-.popup-content h3 {
+.popup-content h2 {
   color: rgb(0, 70, 0);
 }
 
