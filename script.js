@@ -10,6 +10,7 @@ const velib = ["./assets/img/previews/velib.jpg","API Example of Velib disponibi
 const pokemon = ["./assets/img/previews/pokemon.jpg","Pokemon App Exercice with Angular"];
 const visitcard = ["./assets/img/previews/visitcard.jpg","Exercice in POO with React JS, to create your visit card, responsive with Grid & Flex CSS display"];
 const buddha = ["./assets/img/previews/buddha.jpg","Quiz in Javascript using jQuery"];
+const designext = ["./assets/img/previews/designext.jpg","Design Examples with Next Js"];
 const github_pokemon = ["./assets/img/previews/github-pokemon.jpg","POO with Angular & TypeScript"];
 const github_racing = ["./assets/img/previews/github-racing.jpg","Project GitHub Group Page"];
 const github_tph = ["./assets/img/previews/github-tph.jpg","Web 3 Final Project GitHub Group Page"];
@@ -38,6 +39,7 @@ const linkVelib = document.getElementById("link-velib");
 const linkPokemon = document.getElementById("link-pokemon");
 const linkVisitcard = document.getElementById("link-visitcard");
 const linkBuddha = document.getElementById("link-buddha");
+const linkDesignext = document.getElementById("link-designext");
 const previewImg = document.getElementById("preview-img");
 const previewText = document.getElementById("preview-text");
 const preview = document.getElementById("preview");
@@ -84,6 +86,7 @@ const linksData = [
   { link: linkPokemon, target: pokemon },
   { link: linkVisitcard, target: visitcard },
   { link: linkBuddha, target: buddha },
+  { link: linkDesignext, target: designext },
   { link: imgFolder1, target: github_racing },
   { link: imgFolder2, target: github_tph },
   { link: imgFolder3, target: github_morpion },
@@ -137,7 +140,7 @@ popup.innerHTML = `
     <div class="separate"></div>
     <h2>Skills</h2>
     <ul>
-      <li><i>React Js, Node.js, Angular</i></li>
+      <li><i>React Js, Node.js, Angular, Next Js</i></li>
       <li><i>Svelte, SvelteKit, Ruby On Rails</i></li>
       <li><i>HTML, CSS, Sass, Bootstrap</i></li>
       <li><i>Javascript ES6, TypeScript</i></li>
