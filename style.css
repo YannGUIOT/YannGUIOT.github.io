@@ -176,17 +176,25 @@ nav {
   }
 
   #ban-img {
-    width: 296px;
-    height: 58px;
+    width: 360px;
+    height: 71px;
+    margin-left: -20px;
   }
 
   .descriptionLink {
-    font-size: 1.2em;
+    flex-direction: column;
+    align-items: start;
+    height: 40px;
   }
 
   .title {
     width: 290px;
     overflow: hidden;
+  }
+
+  .line-part-2 {
+    padding-left: 2em;
+    margin-top: -0.8em;
   }
 }
 
@@ -225,7 +233,9 @@ nav {
   }
 
   .descriptionLink {
-    font-size: 1.2em;
+    flex-direction: row;
+    align-items: center;
+    height: 16px;
   }
 
   .status {
@@ -363,9 +373,8 @@ a {
 .descriptionLink {
   margin-left: -12px;
   display: flex;
-  height: 16px;
-  align-items: center;
   gap: 1em;
+  font-size: 1.2em;
 }
 
 .projectTitle {
@@ -480,4 +489,11 @@ a {
 
 .popup-content i {
   color: rgb(70, 140, 70);
+}
+
+.line-part-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 1em;
 }
