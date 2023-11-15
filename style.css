@@ -141,7 +141,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 60px;
+  min-height: 50px;
+  padding: 0.4em;
 }
 
 nav ul {
