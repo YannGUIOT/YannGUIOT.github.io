@@ -183,6 +183,11 @@ nav {
   .descriptionLink {
     font-size: 1.2em;
   }
+
+  .title {
+    width: 290px;
+    overflow: hidden;
+  }
 }
 
 /* GRANDS ECRANS */
@@ -225,6 +230,10 @@ nav {
 
   .status {
     width: 896px;
+  }
+
+  .title {
+    width: 30em;
   }
 }
 
@@ -343,12 +352,12 @@ a {
 .title {
   display: flex;
   align-items: center;
-  width: 30em;
   height: 2.5em;
   color: var(--title-color);
   border: 1px solid var(--line-color);
   border-radius: 10px;
   background-color: var(--title-bck-grd-color);
+  padding-left: 1em;
 }
 
 .descriptionLink {
