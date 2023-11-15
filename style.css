@@ -160,12 +160,7 @@ nav {
     justify-content: center;
   }
 
-  .slide-mode {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: small;
-  }
+
   .nav-space {
     height: 1.5em;
   }
@@ -178,21 +173,21 @@ nav {
     width: 600px;
     flex-direction: row;
     justify-content: space-between;
-    padding-left: 32px;
   }
 
   nav {
     flex-direction: row;
     justify-content: space-between;
+    padding-left: 32px;
+    padding-right: 32px;
   }
-  
-  .slide-mode {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-right: 32px;
-    font-size: small;
-  }
+}
+
+.slide-mode {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: small;
 }
 
 .nav {
