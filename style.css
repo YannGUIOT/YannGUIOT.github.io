@@ -172,20 +172,16 @@ nav {
   .welcome {
     flex-direction: column;
     align-items: center;
-    width: 482px;
+    width: 360px;
   }
 
-  .welcomeBan {
-    width: 448px;
-    height: 88px;
-  }
   #ban-img {
-    width: 448px;
-    height: 88px;
+    width: 296px;
+    height: 58px;
   }
 
   .descriptionLink {
-    font-size: 0.9em;
+    font-size: 1.2em;
   }
 }
 
@@ -218,7 +214,7 @@ nav {
     width: 896px;
   }
 
-  .welcomeBan {
+  #ban-img {
     width: 896px;
     height: 176px;
   }
