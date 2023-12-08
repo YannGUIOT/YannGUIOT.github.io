@@ -1,8 +1,8 @@
 let darkMode = false;
 
-const racing = ["./assets/img/previews/racing.jpg","Teamwork - Organization of tasks, Drafting of specifications, signs of graphic models, class diagram and data models, Realization of an authentication system with tokens, API Management - Payments (Stripe), API Management - Sending Automated Emails, Admin panel ..."];
+const racing = ["./assets/img/previews/racing.jpg","Teamwork - Organization of tasks, Drafting of specifications, signs of graphic models, class diagram and data models, Realization of an authentication system with tokens, API Management - Payments (Stripe), API Management - Sending Automated Emails, Admin panel ...<br>[ Ruby on Rails - Tailwind - Trello - DBdiagram - Figma<br>Fly - Github - API : Stripe - Sendinblue ]"];
 const morpion = ["./assets/img/previews/morpion.jpg","Tic-Tac-Toe Game - following the MVC Model"];
-const tph = ["./assets/img/previews/tph.jpg","Web 3 & NFT's Final Project"];
+const tph = ["./assets/img/previews/tph.jpg","Web 3 & NFT's Final Project<br>[ React - NodeJs - Trello - Vercel - Github - Photoshop<br>Web3 : Solidity - IPFS - HardHat - DAO - Piñata - MetaMask ]"];
 const minesweeper = ["./assets/img/previews/minesweeper.jpg","Minesweeper Game"];
 const kaagame = ["./assets/img/previews/kaagame.jpg","Personal Kaamelott Game"];
 const boutique = ["./assets/img/previews/boutique.jpg","Personal Online Store Example, with React JS & Supabase."];
@@ -43,6 +43,10 @@ const linkDesignext = document.getElementById("link-designext");
 const previewImg = document.getElementById("preview-img");
 const previewText = document.getElementById("preview-text");
 const preview = document.getElementById("preview");
+
+window.addEventListener("load", function() {
+  window.scrollTo(0, 0);
+});
 
 // Dark/Light Mode 
 const clickMode = () => {
@@ -166,3 +170,5 @@ const closePopUpCV = () => {
 popup.querySelector('.popup-content').addEventListener('click', e => {
   e.stopPropagation();
 });
+
+
