@@ -44,9 +44,9 @@ const previewImg = document.getElementById("preview-img");
 const previewText = document.getElementById("preview-text");
 const preview = document.getElementById("preview");
 
-window.addEventListener("load", function() {
-  window.scrollTo(0, 0);
-});
+// window.addEventListener("load", function() {
+//   window.scrollTo(0, 0);
+// });
 
 // Dark/Light Mode 
 const clickMode = () => {
