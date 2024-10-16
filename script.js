@@ -109,52 +109,70 @@ const popup = document.createElement('div');
 popup.classList.add('popup');
 
 popup.innerHTML = `
-  <div class="popup-content">
+<div class="popup-content">
 
-    <div class="close-button">
-      <img 
-        src="./assets/img/icons/close.svg"
-        class="close-icon"
-        onclick="closePopUpCV()"
-      >
-    </div>
-
-    <h2>Location</h2>
-    <ul>
-      <li><a href="https://www.google.fr/maps/place/Perpignan/@42.666332,2.7840618,11z/data=!4m6!3m5!1s0x12b06e4e80fd88fd:0x1c83306520f2dd4f!8m2!3d42.6886591!4d2.8948332!16zL20vMDlua3E?entry=ttu" target="_blank">France | Occitanie | Perpignan (66)</a></li> 
-    </ul>
-    <div class="separate"></div>
-    <div class="formations">
-      <h2>Formations</h2>
-      <div class="line">
-        <li></li>[ Sept 2022 - Mai 2023 ] <a href="https://www.thehackingproject.org/" target="_blank"><strong>The Hacking Project</strong></a>
-      </div>
-      <div class="details">
-        <span><i><strong>Formation Dev++</strong></i></span><br />
-        <span><i>Peer Learning Bootcamp</i></span><br />
-        <span><i>Titre RNCP 34779 Développeur Web (Niv Bac+2)</i></span><br />
-      </div>
-      <div class="line">
-        <li></li>BTS informatique industriel [ Sept 2000 - Juin 2002 ]
-      </div>
-      <div class="details">
-        <span><i>Programming C & C++</i></span><br />
-      </div>
-    </div>
-    <div class="separate"></div>
-    <h2>Skills</h2>
-    <ul>
-      <li><i>React Js, Node.js, Angular, Next Js</i></li>
-      <li><i>Svelte, SvelteKit, Ruby On Rails</i></li>
-      <li><i>HTML, CSS, Sass, Bootstrap</i></li>
-      <li><i>Javascript ES6, TypeScript</i></li>
-      <li><i>Python, Ruby, PHP</i></li>
-      <li><i>PostgreSQL, MySQL, Supabase</i></li>
-      <li><i>Git, GitHub, WSL, VS Code</i></li>
-      </br>
-      <li><i>Photoshop, Adobe XD</i></li>
-    </ul>
+  <div class="close-button">
+    <img 
+      src="./assets/img/icons/close.svg"
+      class="close-icon"
+      onclick="closePopUpCV()"
+    >
   </div>
+
+  <h2>Location</h2>
+  <ul>
+    <li><a href="https://www.google.fr/maps/place/Perpignan/@42.666332,2.7840618,11z/data=!4m6!3m5!1s0x12b06e4e80fd88fd:0x1c83306520f2dd4f!8m2!3d42.6886591!4d2.8948332!16zL20vMDlua3E?entry=ttu" target="_blank">France | Occitanie | Perpignan (66)</a></li> 
+  </ul>
+  <div class="separate"></div>
+  <div class="formations">
+    <h2>Formations</h2>
+    <div class="line">
+      <li></li>[ Sept 2022 - Mai 2023 ] <a href="https://www.thehackingproject.org/" target="_blank"><strong>The Hacking Project</strong></a>
+    </div>
+    <div class="details">
+      <span><i><strong>Formation Dev++</strong></i></span><br />
+      <span><i>Peer Learning Bootcamp</i></span><br />
+      <span><i>Titre RNCP 34779 Développeur Web (Niv Bac+2)</i></span><br />
+    </div>
+    <div class="line">
+      <li></li>BTS informatique industriel [ Sept 2000 - Juin 2002 ]
+    </div>
+    <div class="details">
+      <span><i>Programming C & C++</i></span><br />
+    </div>
+  </div>
+  <div class="separate"></div>
+  <div class="formations">
+    <h2>Expérience Profesionnelle</h2>
+    <div class="line">
+      <li></li>[ Avril 2024 - Aujourd'hui ]
+    </div>
+    <div class="line">
+      MAINTENANCE en Freelance d'un EXTRANET &nbsp; &nbsp; &nbsp;
+    </div>
+    <div class="line">
+      pour INNOVAL / FARAGO BRETAGNE &nbsp; &nbsp; &nbsp;
+    </div>
+    <div class="details">
+      <span><i>APP, API, DAO, INTEGRATEUR</i></span><br />
+      <span><i>ReactJs, NodeJs, Redux, Sequelize</i></span><br />
+      <span><i>Gitlab, Redmine, PgAdmin</i></span><br />
+    </div>
+  </div>
+  <div class="separate"></div>
+  <h2>Skills</h2>
+  <ul>
+    <li><i>React Js, Node.js, Angular, Next Js</i></li>
+    <li><i>Svelte, SvelteKit, Ruby On Rails</i></li>
+    <li><i>HTML, CSS, Sass, Bootstrap</i></li>
+    <li><i>Javascript ES6, TypeScript, Redux</i></li>
+    <li><i>Python, Ruby, PHP, Sequelize</i></li>
+    <li><i>PostgreSQL, MySQL, Supabase</i></li>
+    <li><i>Gitlab, GitHub, WSL, VS Code</i></li>
+    </br>
+    <li><i>Photoshop, Adobe XD</i></li>
+  </ul>
+</div>
 `;
 
 document.body.appendChild(popup);
