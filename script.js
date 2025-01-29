@@ -148,7 +148,7 @@ popup.innerHTML = `
       <li></li>[ Avril 2024 - Aujourd'hui ]
     </div>
     <div class="line">
-      MAINTENANCE en Freelance d'un EXTRANET &nbsp; &nbsp; &nbsp;
+      MAINTENANCE EXTRANET &nbsp; &nbsp; &nbsp;
     </div>
     <div class="line">
       pour INNOVAL / FARAGO BRETAGNE &nbsp; &nbsp; &nbsp;
