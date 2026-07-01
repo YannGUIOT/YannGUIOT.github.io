@@ -183,14 +183,14 @@ popup.innerHTML = `
   <div class="formations">
     <h2>Training courses</h2>
     <div class="line">
-      <li></li>[ Feb 2024 - March 2024 ] <strong>NoCode & IA Success Program</strong></a>
+      <li></li>NoCode & IA Success Program [ Feb 2024 - March 2024 ] &nbsp;&nbsp; 
     </div>
     <div class="details">
       <span><i><strong>Alegria E-learning Formation</strong></i></span><br />
       <span><i>Airtable, Make, Softr, OpenAI</i></span><br />
     </div>
     <div class="line">
-      <li></li>[ Sept 2022 - May 2023 ] <a href="https://www.thehackingproject.org/" target="_blank"><strong>The Hacking Project</strong></a>
+      <li></li>[ Sept 2022 - May 2023 ] &nbsp;&nbsp; <a href="https://www.thehackingproject.org/" target="_blank"><strong>The Hacking Project</strong></a>
     </div>
     <div class="details">
       <span><i><strong>Training course Dev++</strong></i></span><br />
@@ -198,7 +198,7 @@ popup.innerHTML = `
       <span><i>Title RNCP 34779 Développeur Web</i></span><br />
     </div>
     <div class="line">
-      <li></li>BTS Industrial computing [ Sept 2000 - June 2002 ]
+      <li></li>BTS Industrial computing [ Sept 2000 - June 2002 ] &nbsp;&nbsp;
     </div>
     <div class="details">
       <span><i>Programming C & C++</i></span><br />
@@ -208,10 +208,7 @@ popup.innerHTML = `
   <div class="formations">
     <h2>Professional Experience</h2>
     <div class="line">
-      <li></li>[ March 2025 - Today ]
-    </div>
-    <div class="line">
-      <strong>NOCODE & IA COACH &nbsp; &nbsp; &nbsp;</strong>
+      <li></li>NOCODE & IA COACH [ March 2025 - Today ] &nbsp;&nbsp; 
     </div>
     <div class="line">
       for ALEGRIA.TECH &nbsp; &nbsp; &nbsp;
@@ -220,10 +217,7 @@ popup.innerHTML = `
       <span><i>Make, Airtable, Softr, Jotform, OpenAI</i></span><br />
     </div>
     <div class="line">
-      <li></li>[ April 2024 - December 2024 ]
-    </div>
-    <div class="line">
-      <strong>EXTRANET MAINTENANCE &nbsp; &nbsp; &nbsp;</strong>
+      <li></li>EXTRANET MAINTENANCE [ April 2024 - Dec 2024 ] &nbsp;&nbsp; 
     </div>
     <div class="line">
       for INNOVAL / FARAGO BRETAGNE &nbsp; &nbsp; &nbsp;
