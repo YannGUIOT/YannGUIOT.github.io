@@ -43,6 +43,9 @@ const linkDesignext = document.getElementById("link-designext");
 const previewImg = document.getElementById("preview-img");
 const previewText = document.getElementById("preview-text");
 const preview = document.getElementById("preview");
+const PREVIEW_MARGIN = 24;
+const PREVIEW_GAP = 100;
+let currentPreviewTrigger = null;
 
 // window.addEventListener("load", function() {
 //   window.scrollTo(0, 0);
@@ -65,18 +68,46 @@ const clickMode = () => {
 }
 imgSlide.addEventListener("click",clickMode);
 
-const renderVisible = (e) => { e.style.visibility = 'visible';}
-const renderHidden = (e) => { e.style.visibility = 'hidden';}
+const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+const renderVisible = (e) => {
+  e.style.visibility = 'visible';
+  e.style.opacity = '1';
+}
+const renderHidden = (e) => {
+  e.style.visibility = 'hidden';
+  e.style.opacity = '0';
+}
 
-const previewDisplay = (x) => {
+const updatePreviewPosition = (element) => {
+  const elementRect = element.getBoundingClientRect();
+  const previewRect = preview.getBoundingClientRect();
+  const maxLeft = Math.max(PREVIEW_MARGIN, window.innerWidth - previewRect.width - PREVIEW_MARGIN);
+  const maxTop = Math.max(PREVIEW_MARGIN, window.innerHeight - previewRect.height - PREVIEW_MARGIN);
+  const left = clamp(elementRect.right + PREVIEW_GAP, PREVIEW_MARGIN, maxLeft);
+  const top = clamp(
+    elementRect.top + ((elementRect.height - previewRect.height) / 2),
+    PREVIEW_MARGIN,
+    maxTop
+  );
+
+  preview.style.left = `${left}px`;
+  preview.style.top = `${top}px`;
+}
+
+const previewDisplay = (element, x) => {
+  currentPreviewTrigger = element;
   previewImg.src = x[0];
   previewText.innerHTML = x[1];
+  updatePreviewPosition(element);
   renderVisible(preview);
 }
 
 const linksEventListeners = (element, img) => {
-  element.addEventListener('mouseover', function() { previewDisplay(img); });
-  element.addEventListener('mouseout', function() { renderHidden(preview); });
+  element.addEventListener('mouseenter', function() { previewDisplay(element, img); });
+  element.addEventListener('mouseleave', function() {
+    currentPreviewTrigger = null;
+    renderHidden(preview);
+  });
 }
 
 const linksData = [
@@ -101,6 +132,18 @@ const linksData = [
 
 linksData.forEach(({ link, target }) => {
   linksEventListeners(link, target);
+});
+
+window.addEventListener('resize', function() {
+  if (currentPreviewTrigger) {
+    updatePreviewPosition(currentPreviewTrigger);
+  }
+});
+
+window.addEventListener('scroll', function() {
+  if (currentPreviewTrigger) {
+    updatePreviewPosition(currentPreviewTrigger);
+  }
 });
 
 //***** CV *****// 
@@ -208,5 +251,3 @@ const closePopUpCV = () => {
 popup.querySelector('.popup-content').addEventListener('click', e => {
   e.stopPropagation();
 });
-
-
