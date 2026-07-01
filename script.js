@@ -125,17 +125,24 @@ popup.innerHTML = `
   </ul>
   <div class="separate"></div>
   <div class="formations">
-    <h2>Formations</h2>
+    <h2>Training courses</h2>
     <div class="line">
-      <li></li>[ Sept 2022 - Mai 2023 ] <a href="https://www.thehackingproject.org/" target="_blank"><strong>The Hacking Project</strong></a>
+      <li></li>[ Feb 2024 - March 2024 ] <strong>NoCode & IA Success Program</strong></a>
     </div>
     <div class="details">
-      <span><i><strong>Formation Dev++</strong></i></span><br />
-      <span><i>Peer Learning Bootcamp</i></span><br />
-      <span><i>Titre RNCP 34779 Développeur Web (Niv Bac+2)</i></span><br />
+      <span><i><strong>Alegria E-learning Formation</strong></i></span><br />
+      <span><i>Airtable, Make, Softr, OpenAI</i></span><br />
     </div>
     <div class="line">
-      <li></li>BTS informatique industriel [ Sept 2000 - Juin 2002 ]
+      <li></li>[ Sept 2022 - May 2023 ] <a href="https://www.thehackingproject.org/" target="_blank"><strong>The Hacking Project</strong></a>
+    </div>
+    <div class="details">
+      <span><i><strong>Training course Dev++</strong></i></span><br />
+      <span><i>Peer Learning Bootcamp</i></span><br />
+      <span><i>Title RNCP 34779 Développeur Web</i></span><br />
+    </div>
+    <div class="line">
+      <li></li>BTS Industrial computing [ Sept 2000 - June 2002 ]
     </div>
     <div class="details">
       <span><i>Programming C & C++</i></span><br />
@@ -143,15 +150,27 @@ popup.innerHTML = `
   </div>
   <div class="separate"></div>
   <div class="formations">
-    <h2>Expérience Profesionnelle</h2>
+    <h2>Professional Experience</h2>
     <div class="line">
-      <li></li>[ Avril 2024 - Aujourd'hui ]
+      <li></li>[ March 2025 - Today ]
     </div>
     <div class="line">
-      MAINTENANCE EXTRANET &nbsp; &nbsp; &nbsp;
+      <strong>NOCODE & IA COACH &nbsp; &nbsp; &nbsp;</strong>
     </div>
     <div class="line">
-      pour INNOVAL / FARAGO BRETAGNE &nbsp; &nbsp; &nbsp;
+      for ALEGRIA.TECH &nbsp; &nbsp; &nbsp;
+    </div>
+    <div class="details">
+      <span><i>Make, Airtable, Softr, Jotform, OpenAI</i></span><br />
+    </div>
+    <div class="line">
+      <li></li>[ April 2024 - December 2024 ]
+    </div>
+    <div class="line">
+      <strong>EXTRANET MAINTENANCE &nbsp; &nbsp; &nbsp;</strong>
+    </div>
+    <div class="line">
+      for INNOVAL / FARAGO BRETAGNE &nbsp; &nbsp; &nbsp;
     </div>
     <div class="details">
       <span><i>APP, API, DAO, INTEGRATEUR</i></span><br />
@@ -169,6 +188,7 @@ popup.innerHTML = `
     <li><i>Python, Ruby, PHP, Sequelize</i></li>
     <li><i>PostgreSQL, MySQL, Supabase</i></li>
     <li><i>Gitlab, GitHub, WSL, VS Code</i></li>
+    <li><i>Airtable, Make, Softr, Jotform, OpenAI</i></li>
     </br>
     <li><i>Photoshop, Adobe XD</i></li>
   </ul>
