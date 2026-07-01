@@ -11,6 +11,9 @@ const pokemon = ["./assets/img/previews/pokemon.jpg","Pokedex App in POO with An
 const visitcard = ["./assets/img/previews/visitcard.jpg","business card creation web application<br>[ React - NodeJs - POO - CSS Grid & Flex ]"];
 const buddha = ["./assets/img/previews/buddha.jpg","Quiz using jQuery"];
 const designext = ["./assets/img/previews/designext.jpg","Design Examples with Next Js"];
+const coaching = ["./assets/img/previews/coaching.jpg","Complete customizable Coaching Web App<br>[ React - NodeJs - Typescript - Prisma ]"];
+const management = ["./assets/img/previews/management.jpg","Sales app for suscription management<br>[ React - NodeJs - Typescript - Prisma ]"];
+const mdpcrypt = ["./assets/img/previews/mdpcrypt.jpg","Local encrypted password management software"];
 const github_pokemon = ["./assets/img/previews/github-pokemon.jpg","POO with Angular & TypeScript"];
 const github_racing = ["./assets/img/previews/github-racing.jpg","Project GitHub Group Page"];
 const github_tph = ["./assets/img/previews/github-tph.jpg","Web 3 Final Project GitHub Group Page"];
@@ -40,6 +43,9 @@ const linkPokemon = document.getElementById("link-pokemon");
 const linkVisitcard = document.getElementById("link-visitcard");
 const linkBuddha = document.getElementById("link-buddha");
 const linkDesignext = document.getElementById("link-designext");
+const linkCoaching = document.getElementById("link-coaching");
+const linkManagement = document.getElementById("link-management");
+const linkMdpcrypt = document.getElementById("link-mdpcrypt");
 const previewImg = document.getElementById("preview-img");
 const previewText = document.getElementById("preview-text");
 const preview = document.getElementById("preview");
@@ -103,6 +109,10 @@ const previewDisplay = (element, x) => {
 }
 
 const linksEventListeners = (element, img) => {
+  if (!element) {
+    return;
+  }
+
   element.addEventListener('mouseenter', function() { previewDisplay(element, img); });
   element.addEventListener('mouseleave', function() {
     currentPreviewTrigger = null;
@@ -121,6 +131,9 @@ const linksData = [
   { link: linkPokemon, target: pokemon },
   { link: linkVisitcard, target: visitcard },
   { link: linkBuddha, target: buddha },
+  { link: linkCoaching, target: coaching },
+  { link: linkManagement, target: management },
+  { link: linkMdpcrypt, target: mdpcrypt },
   { link: linkDesignext, target: designext },
   { link: imgFolder1, target: github_racing },
   { link: imgFolder2, target: github_tph },
